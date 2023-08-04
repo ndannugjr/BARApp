@@ -1,0 +1,12 @@
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\bin\Debug\net6.0\BAR.Factory.deps.json
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\bin\Debug\net6.0\BAR.Factory.dll
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\bin\Debug\net6.0\BAR.Factory.pdb
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.csproj.AssemblyReference.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.AssemblyInfoInputs.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.AssemblyInfo.cs
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.csproj.CoreCompileInputs.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.dll
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\refint\BAR.Factory.dll
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\BAR.Factory.pdb
+C:\Users\Jiks Dannug\source\repos\BAR\BAR.Factory\obj\Debug\net6.0\ref\BAR.Factory.dll

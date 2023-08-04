@@ -1,0 +1,17 @@
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\bin\Debug\net6.0-windows\BARApp.exe
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\bin\Debug\net6.0-windows\BARApp.deps.json
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\bin\Debug\net6.0-windows\BARApp.runtimeconfig.json
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\bin\Debug\net6.0-windows\BARApp.dll
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\bin\Debug\net6.0-windows\BARApp.pdb
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.csproj.AssemblyReference.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.Form1.resources
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.csproj.GenerateResource.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.AssemblyInfoInputs.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.AssemblyInfo.cs
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.csproj.CoreCompileInputs.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.dll
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\refint\BARApp.dll
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.pdb
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\BARApp.genruntimeconfig.cache
+C:\Users\Jiks Dannug\source\repos\BAR\BARApp\obj\Debug\net6.0-windows\ref\BARApp.dll
