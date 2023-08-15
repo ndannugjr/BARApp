@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RYsXHlJ12ZhNb1Ab+ngcIfCz1wvkyJglVh2wwqQ7PGRQA0CRg8M8sXEtAoFMpImjn9MghT0XzHXGEfpsd11TiA==",
+  "dgSpecHash": "e1v/vGA/Cocm6LQDD9zpapW2CcYoA2Hbm17EFcBZJNv2iZT8a9DeIeptMI2ZTWQtA/pWN6mz8yRhFy0JDrUdwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\BAR.Data.csproj",
+  "projectFilePath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.9\\microsoft.data.sqlite.core.7.0.9.nupkg.sha512",

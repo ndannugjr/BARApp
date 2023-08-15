@@ -17,6 +17,36 @@ namespace BAR.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.9");
 
+            modelBuilder.Entity("BAR.Data.MenuNavigation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsForAdmin")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsForClient")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("MenuOrder")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ParentId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuNavigations");
+                });
+
             modelBuilder.Entity("BAR.Data.User", b =>
                 {
                     b.Property<int>("Id")
@@ -85,8 +115,9 @@ namespace BAR.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

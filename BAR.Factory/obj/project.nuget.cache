@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j+TJlhLjduzpqiQhptiE3YluynqXcmBaUS1ORJJbllwewhbetYW/8TL5Ewld81cnZJEDi9YGF5JMhZ7SNiDL5Q==",
+  "dgSpecHash": "tdgoNrU9g5TDnj+ORPz4f6VKKjg7hdqur5dKUdgATYTj1XSS0Djpdels+QSj7e4ekH55KLg8dMzxubthcQrYnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\BAR.Factory.csproj",
+  "projectFilePath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\BAR.Factory.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.9\\microsoft.data.sqlite.core.7.0.9.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.9\\microsoft.entityframeworkcore.7.0.9.nupkg.sha512",

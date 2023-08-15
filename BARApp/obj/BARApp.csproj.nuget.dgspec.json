@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BARApp\\BARApp.csproj": {}
+    "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BARApp\\BARApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Core\\BAR.Core.csproj": {
+    "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Core\\BAR.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj",
         "projectName": "BAR.Core",
-        "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Core\\BAR.Core.csproj",
+        "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj",
         "packagesPath": "C:\\Users\\Jiks Dannug\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Core\\obj\\",
+        "outputPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -31,7 +31,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj": {
+                "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -63,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\BAR.Data.csproj": {
+    "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\BAR.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj",
         "projectName": "BAR.Data",
-        "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\BAR.Data.csproj",
+        "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj",
         "packagesPath": "C:\\Users\\Jiks Dannug\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\obj\\",
+        "outputPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -138,14 +142,14 @@
         }
       }
     },
-    "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\BAR.Factory.csproj": {
+    "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\BAR.Factory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\BAR.Factory.csproj",
+        "projectUniqueName": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\BAR.Factory.csproj",
         "projectName": "BAR.Factory",
-        "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\BAR.Factory.csproj",
+        "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\BAR.Factory.csproj",
         "packagesPath": "C:\\Users\\Jiks Dannug\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\obj\\",
+        "outputPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -166,8 +170,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\BAR.Data.csproj": {
-                "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Data\\BAR.Data.csproj"
+              "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj": {
+                "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj"
+              },
+              "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj": {
+                "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\BAR.Data.csproj"
               }
             }
           }
@@ -201,14 +208,14 @@
         }
       }
     },
-    "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BARApp\\BARApp.csproj": {
+    "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BARApp\\BARApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BARApp\\BARApp.csproj",
+        "projectUniqueName": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BARApp\\BARApp.csproj",
         "projectName": "BARApp",
-        "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BARApp\\BARApp.csproj",
+        "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BARApp\\BARApp.csproj",
         "packagesPath": "C:\\Users\\Jiks Dannug\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BARApp\\obj\\",
+        "outputPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BARApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -229,11 +236,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Core\\BAR.Core.csproj": {
-                "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Core\\BAR.Core.csproj"
+              "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj": {
+                "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Core\\BAR.Core.csproj"
               },
-              "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\BAR.Factory.csproj": {
-                "projectPath": "C:\\Users\\Jiks Dannug\\source\\repos\\BAR\\BAR.Factory\\BAR.Factory.csproj"
+              "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\BAR.Factory.csproj": {
+                "projectPath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Factory\\BAR.Factory.csproj"
               }
             }
           }
@@ -247,6 +254,22 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Speech": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

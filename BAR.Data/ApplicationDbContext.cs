@@ -28,6 +28,6 @@ namespace BAR.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserActivityLog> UserActivityLogs { get; set; }
-
+        public  DbSet<MenuNavigation>  MenuNavigations { get; set; }
     }
 }
