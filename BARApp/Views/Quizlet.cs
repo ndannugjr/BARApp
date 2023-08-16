@@ -13,6 +13,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using BARApp.uc;
 using BARApp.Views.Modal;
 using BAR.Core.Models;
+using BAR.Core.Classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BARApp.Views
 {
@@ -53,6 +55,28 @@ namespace BARApp.Views
             // pnlReadingCompreInitialHeight = pnlReadingCompre.Height;
 
             _quizletInstace = this;
+
+            List<string> descriptions = GetEnumDescriptions<ActivityType>();
+
+            foreach (string description in descriptions)
+            {
+                cbType.Items.Add(description);
+            }
+
+
+        }
+
+        public List<string> GetEnumDescriptions<TEnum>() where TEnum : Enum
+        {
+            List<string> descriptions = new List<string>();
+
+            foreach (TEnum value in Enum.GetValues(typeof(TEnum)))
+            {
+                string description = EnumHelper.GetEnumDescription(value);
+                descriptions.Add(description);
+            }
+
+            return descriptions;
         }
 
         private void rtbNonVoice_Enter(object sender, EventArgs e)
@@ -247,6 +271,6 @@ namespace BARApp.Views
             tableLayoutPanel2.PerformLayout();
         }
 
-      
+
     }
 }

@@ -54,6 +54,13 @@
             tableLayoutPanel5 = new TableLayoutPanel();
             button4 = new Button();
             btnSave = new Button();
+            tableLayoutPanel8 = new TableLayoutPanel();
+            label5 = new Label();
+            cbType = new ComboBox();
+            label6 = new Label();
+            cbGrade = new ComboBox();
+            label7 = new Label();
+            cbSchoolYear = new ComboBox();
             tableLayoutPanel4 = new TableLayoutPanel();
             button1 = new Button();
             button2 = new Button();
@@ -69,6 +76,7 @@
             panel5.SuspendLayout();
             pnlReadingCompre.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel8.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
@@ -76,10 +84,12 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoScroll = true;
+            tableLayoutPanel1.BackColor = Color.Teal;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(panel2, 0, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel5, 0, 2);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel8, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(10);
@@ -120,6 +130,7 @@
             tableLayoutPanel2.Controls.Add(ucSpeechControlReadingCompre1, 1, 4);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.Padding = new Padding(5, 0, 5, 0);
             tableLayoutPanel2.RowCount = 6;
@@ -244,7 +255,8 @@
             tableLayoutPanel3.Controls.Add(pnlReadingCompre, 0, 4);
             tableLayoutPanel3.Controls.Add(txtTitle1, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(8, 671);
+            tableLayoutPanel3.Location = new Point(5, 668);
+            tableLayoutPanel3.Margin = new Padding(0);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 5;
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
@@ -252,7 +264,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 400F));
-            tableLayoutPanel3.Size = new Size(1167, 594);
+            tableLayoutPanel3.Size = new Size(1173, 600);
             tableLayoutPanel3.TabIndex = 12;
             tableLayoutPanel3.Tag = "tlp3";
             // 
@@ -267,7 +279,7 @@
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(10);
-            panel5.Size = new Size(1167, 250);
+            panel5.Size = new Size(1173, 250);
             panel5.TabIndex = 4;
             // 
             // rtbReadingCompre
@@ -278,7 +290,7 @@
             rtbReadingCompre.Location = new Point(10, 10);
             rtbReadingCompre.Margin = new Padding(0);
             rtbReadingCompre.Name = "rtbReadingCompre";
-            rtbReadingCompre.Size = new Size(1145, 228);
+            rtbReadingCompre.Size = new Size(1151, 228);
             rtbReadingCompre.TabIndex = 1;
             rtbReadingCompre.Text = "";
             rtbReadingCompre.TextChanged += rtbReadingCompre_TextChanged;
@@ -293,7 +305,7 @@
             label4.ForeColor = Color.DimGray;
             label4.Location = new Point(3, 0);
             label4.Name = "label4";
-            label4.Size = new Size(577, 47);
+            label4.Size = new Size(580, 47);
             label4.TabIndex = 1;
             label4.Text = "Title: ";
             label4.TextAlign = ContentAlignment.MiddleRight;
@@ -304,7 +316,7 @@
             btnMultipleChoice.BackColor = Color.FromArgb(192, 255, 255);
             btnMultipleChoice.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnMultipleChoice.ForeColor = Color.DimGray;
-            btnMultipleChoice.Location = new Point(230, 300);
+            btnMultipleChoice.Location = new Point(233, 300);
             btnMultipleChoice.Name = "btnMultipleChoice";
             btnMultipleChoice.Size = new Size(350, 50);
             btnMultipleChoice.TabIndex = 5;
@@ -318,7 +330,7 @@
             btnIdentification.BackColor = Color.FromArgb(192, 255, 255);
             btnIdentification.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnIdentification.ForeColor = Color.DimGray;
-            btnIdentification.Location = new Point(586, 300);
+            btnIdentification.Location = new Point(589, 300);
             btnIdentification.Name = "btnIdentification";
             btnIdentification.Size = new Size(350, 50);
             btnIdentification.TabIndex = 6;
@@ -335,7 +347,7 @@
             pnlReadingCompre.Location = new Point(0, 353);
             pnlReadingCompre.Margin = new Padding(0);
             pnlReadingCompre.Name = "pnlReadingCompre";
-            pnlReadingCompre.Size = new Size(1167, 400);
+            pnlReadingCompre.Size = new Size(1173, 400);
             pnlReadingCompre.TabIndex = 7;
             // 
             // tlpQuestions
@@ -350,7 +362,7 @@
             tlpQuestions.Name = "tlpQuestions";
             tlpQuestions.RowCount = 1;
             tlpQuestions.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            tlpQuestions.Size = new Size(1167, 400);
+            tlpQuestions.Size = new Size(1173, 400);
             tlpQuestions.TabIndex = 8;
             tlpQuestions.Tag = "tlpQ";
             tlpQuestions.ControlAdded += tlpQuestions_ControlAdded;
@@ -369,13 +381,13 @@
             txtTitle1.IsAlphaDash = false;
             txtTitle1.IsAlphaNumeric = false;
             txtTitle1.IsAlphaNumericDash = false;
-            txtTitle1.Location = new Point(587, 5);
+            txtTitle1.Location = new Point(590, 5);
             txtTitle1.Margin = new Padding(4, 5, 4, 5);
             txtTitle1.Multiline = false;
             txtTitle1.Name = "txtTitle1";
             txtTitle1.Padding = new Padding(4);
             txtTitle1.PasswordChar = false;
-            txtTitle1.Size = new Size(576, 37);
+            txtTitle1.Size = new Size(579, 37);
             txtTitle1.TabIndex = 8;
             txtTitle1.Texts = "";
             txtTitle1.UnderlinedStyle = false;
@@ -417,12 +429,13 @@
             tableLayoutPanel5.Controls.Add(button4, 0, 0);
             tableLayoutPanel5.Controls.Add(btnSave, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 994);
+            tableLayoutPanel5.Location = new Point(0, 991);
+            tableLayoutPanel5.Margin = new Padding(0);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.Padding = new Padding(20, 10, 20, 0);
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Size = new Size(1200, 105);
+            tableLayoutPanel5.Size = new Size(1206, 111);
             tableLayoutPanel5.TabIndex = 2;
             // 
             // button4
@@ -433,10 +446,10 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.DimGray;
-            button4.Location = new Point(603, 15);
+            button4.Location = new Point(606, 15);
             button4.Margin = new Padding(3, 5, 3, 0);
             button4.Name = "button4";
-            button4.Size = new Size(574, 50);
+            button4.Size = new Size(577, 50);
             button4.TabIndex = 8;
             button4.Text = "CANCEL";
             button4.UseVisualStyleBackColor = false;
@@ -452,11 +465,105 @@
             btnSave.Location = new Point(23, 15);
             btnSave.Margin = new Padding(3, 5, 3, 0);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(574, 50);
+            btnSave.Size = new Size(577, 50);
             btnSave.TabIndex = 7;
             btnSave.Text = "SAVE";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
+            // 
+            // tableLayoutPanel8
+            // 
+            tableLayoutPanel8.ColumnCount = 8;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel8.Controls.Add(label5, 1, 1);
+            tableLayoutPanel8.Controls.Add(cbType, 2, 1);
+            tableLayoutPanel8.Controls.Add(label6, 3, 1);
+            tableLayoutPanel8.Controls.Add(cbGrade, 4, 1);
+            tableLayoutPanel8.Controls.Add(label7, 5, 1);
+            tableLayoutPanel8.Controls.Add(cbSchoolYear, 6, 1);
+            tableLayoutPanel8.Dock = DockStyle.Fill;
+            tableLayoutPanel8.Location = new Point(3, 3);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 3;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel8.Size = new Size(1200, 104);
+            tableLayoutPanel8.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(158, 36);
+            label5.Margin = new Padding(3, 5, 3, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(85, 28);
+            label5.TabIndex = 0;
+            label5.Text = "Prepare";
+            // 
+            // cbType
+            // 
+            cbType.BackColor = Color.White;
+            cbType.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbType.ForeColor = Color.DimGray;
+            cbType.FormattingEnabled = true;
+            cbType.Location = new Point(249, 34);
+            cbType.Name = "cbType";
+            cbType.Size = new Size(315, 36);
+            cbType.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(570, 36);
+            label6.Margin = new Padding(3, 5, 3, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(105, 28);
+            label6.TabIndex = 2;
+            label6.Text = "For grade";
+            // 
+            // cbGrade
+            // 
+            cbGrade.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbGrade.ForeColor = Color.DimGray;
+            cbGrade.FormattingEnabled = true;
+            cbGrade.Location = new Point(681, 34);
+            cbGrade.Name = "cbGrade";
+            cbGrade.Size = new Size(151, 36);
+            cbGrade.TabIndex = 3;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(838, 36);
+            label7.Margin = new Padding(3, 5, 3, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(47, 28);
+            label7.TabIndex = 4;
+            label7.Text = "S.Y.";
+            // 
+            // cbSchoolYear
+            // 
+            cbSchoolYear.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbSchoolYear.ForeColor = Color.DimGray;
+            cbSchoolYear.FormattingEnabled = true;
+            cbSchoolYear.Location = new Point(891, 34);
+            cbSchoolYear.Name = "cbSchoolYear";
+            cbSchoolYear.Size = new Size(151, 36);
+            cbSchoolYear.TabIndex = 5;
             // 
             // tableLayoutPanel4
             // 
@@ -562,6 +669,8 @@
             panel5.ResumeLayout(false);
             pnlReadingCompre.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel8.ResumeLayout(false);
+            tableLayoutPanel8.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel6.ResumeLayout(false);
             ResumeLayout(false);
@@ -613,5 +722,12 @@
         private Panel pnlReadingCompre;
         private uc.ucSpeechControl ucSpeechControlVoice;
         private uc.ucTextBox txtTitle1;
+        private TableLayoutPanel tableLayoutPanel8;
+        private Label label5;
+        private ComboBox cbType;
+        private Label label6;
+        private ComboBox cbGrade;
+        private Label label7;
+        private ComboBox cbSchoolYear;
     }
 }
