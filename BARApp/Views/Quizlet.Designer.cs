@@ -52,7 +52,6 @@
             ucSpeechControlVoice1 = new uc.ucSpeechControl();
             ucSpeechControlReadingCompre1 = new uc.ucSpeechControl();
             tableLayoutPanel5 = new TableLayoutPanel();
-            button4 = new Button();
             btnSave = new Button();
             tableLayoutPanel8 = new TableLayoutPanel();
             label5 = new Label();
@@ -172,6 +171,7 @@
             // 
             // rtbVoice
             // 
+            rtbVoice.BackColor = Color.White;
             rtbVoice.BorderStyle = BorderStyle.None;
             rtbVoice.Dock = DockStyle.Fill;
             rtbVoice.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -228,6 +228,7 @@
             // 
             // rtbNonVoice
             // 
+            rtbNonVoice.BackColor = Color.White;
             rtbNonVoice.BorderStyle = BorderStyle.None;
             rtbNonVoice.Dock = DockStyle.Fill;
             rtbNonVoice.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -284,6 +285,7 @@
             // 
             // rtbReadingCompre
             // 
+            rtbReadingCompre.BackColor = Color.White;
             rtbReadingCompre.BorderStyle = BorderStyle.None;
             rtbReadingCompre.Dock = DockStyle.Fill;
             rtbReadingCompre.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -314,6 +316,7 @@
             // 
             btnMultipleChoice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnMultipleChoice.BackColor = Color.FromArgb(192, 255, 255);
+            btnMultipleChoice.FlatStyle = FlatStyle.Flat;
             btnMultipleChoice.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnMultipleChoice.ForeColor = Color.DimGray;
             btnMultipleChoice.Location = new Point(233, 300);
@@ -328,6 +331,7 @@
             // 
             btnIdentification.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnIdentification.BackColor = Color.FromArgb(192, 255, 255);
+            btnIdentification.FlatStyle = FlatStyle.Flat;
             btnIdentification.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnIdentification.ForeColor = Color.DimGray;
             btnIdentification.Location = new Point(589, 300);
@@ -355,8 +359,8 @@
             tlpQuestions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpQuestions.BackColor = Color.White;
             tlpQuestions.ColumnCount = 2;
-            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tlpQuestions.Location = new Point(0, 0);
             tlpQuestions.Margin = new Padding(0);
             tlpQuestions.Name = "tlpQuestions";
@@ -371,7 +375,7 @@
             // txtTitle1
             // 
             txtTitle1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtTitle1.BackColor = SystemColors.Window;
+            txtTitle1.BackColor = Color.White;
             txtTitle1.BorderColor = Color.FromArgb(118, 113, 113);
             txtTitle1.BorderFocusColor = Color.FromArgb(52, 139, 95);
             txtTitle1.BorderSize = 2;
@@ -426,8 +430,7 @@
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Controls.Add(button4, 0, 0);
-            tableLayoutPanel5.Controls.Add(btnSave, 0, 0);
+            tableLayoutPanel5.Controls.Add(btnSave, 1, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(0, 991);
             tableLayoutPanel5.Margin = new Padding(0);
@@ -438,36 +441,20 @@
             tableLayoutPanel5.Size = new Size(1206, 111);
             tableLayoutPanel5.TabIndex = 2;
             // 
-            // button4
-            // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            button4.BackColor = Color.FromArgb(192, 255, 255);
-            button4.FlatAppearance.BorderColor = Color.FromArgb(68, 114, 196);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.DimGray;
-            button4.Location = new Point(606, 15);
-            button4.Margin = new Padding(3, 5, 3, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(577, 50);
-            button4.TabIndex = 8;
-            button4.Text = "CANCEL";
-            button4.UseVisualStyleBackColor = false;
-            // 
             // btnSave
             // 
-            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.BackColor = Color.FromArgb(192, 255, 255);
             btnSave.FlatAppearance.BorderColor = Color.FromArgb(68, 114, 196);
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.DimGray;
-            btnSave.Location = new Point(23, 15);
+            btnSave.Location = new Point(833, 15);
             btnSave.Margin = new Padding(3, 5, 3, 0);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(577, 50);
+            btnSave.Size = new Size(350, 50);
             btnSave.TabIndex = 7;
-            btnSave.Text = "SAVE";
+            btnSave.Text = "SUBMIT";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
@@ -513,6 +500,8 @@
             // cbType
             // 
             cbType.BackColor = Color.White;
+            cbType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbType.FlatStyle = FlatStyle.Flat;
             cbType.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbType.ForeColor = Color.DimGray;
             cbType.FormattingEnabled = true;
@@ -535,6 +524,9 @@
             // 
             // cbGrade
             // 
+            cbGrade.BackColor = Color.White;
+            cbGrade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbGrade.FlatStyle = FlatStyle.Flat;
             cbGrade.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbGrade.ForeColor = Color.DimGray;
             cbGrade.FormattingEnabled = true;
@@ -557,6 +549,9 @@
             // 
             // cbSchoolYear
             // 
+            cbSchoolYear.BackColor = Color.White;
+            cbSchoolYear.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSchoolYear.FlatStyle = FlatStyle.Flat;
             cbSchoolYear.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbSchoolYear.ForeColor = Color.DimGray;
             cbSchoolYear.FormattingEnabled = true;

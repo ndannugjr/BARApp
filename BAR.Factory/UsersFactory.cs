@@ -35,6 +35,10 @@ namespace BAR.Factory
                     RuntimeInfo.Name = string.Format("{0} {1} {2}", userData.FirstName, userData.MiddleName.Substring(0, 1) + ".", userData.LastName);
                     RuntimeInfo.isAdmin = userData.IsAdmin;
 
+                    //comment out for test
+                    // RuntimeInfo.Grade = userData.Grade;
+                    RuntimeInfo.Grade = "I";
+
                     if (userData.IsAdmin)
                         RuntimeInfo.Menu = (from m in _dbContext.MenuNavigations
                                             where m.IsForAdmin == true select m).ToList();
@@ -54,6 +58,25 @@ namespace BAR.Factory
         public void CreateInitialData()
         {
             return;
+            _dbContext = new ApplicationDbContext();
+            var update =_dbContext.ActivityHeader.Where(s => s.Grade == "XII").FirstOrDefault();
+            update.Grade = "I";
+            _dbContext.SaveChanges();
+            
+            _dbContext = new ApplicationDbContext();
+            var  a= _dbContext.ActivityHeader.Where(S => S.Id == 6).FirstOrDefault();
+            a.IsPosted = true;
+            _dbContext.SaveChanges();
+
+            var b = _dbContext.ActivityHeader.Where(S => S.Id == 7).FirstOrDefault();
+            b.IsPosted = true;
+            _dbContext.SaveChanges();
+
+            var c = _dbContext.ActivityHeader.Where(S => S.Id == 8).FirstOrDefault();
+            c.IsPosted = true;
+            c.IsDeleted = true;
+            _dbContext.SaveChanges();
+            
             //User user = new User()
             //{
             //    IsActive = true,
@@ -84,7 +107,7 @@ namespace BAR.Factory
              IsForClient = true,
              MenuOrder = _dbContext.MenuNavigations.Max(p => p.MenuOrder) + 1,
              ParentId = 0,
-             Title = "Quizlet"
+             Title = "DBViewer"
             };
 
             _dbContext.MenuNavigations.Add(m);

@@ -9,7 +9,7 @@ namespace BAR.Core.Models
 {
     public class QuizletModel
     {
-        public int Type { get; set; }
+        public string ActivityType { get; set; }
         public string Grade { get; set; }
         public string SchoolYear { get; set; }
         public List<string> NonVoice { get; set; }
@@ -69,5 +69,7 @@ namespace BAR.Core.Models
         [Description("2029-2030")]
         SY2930,
     }
+
+
 
 }

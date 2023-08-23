@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
+            label7 = new Label();
             label6 = new Label();
             lblQuestionNumber = new Label();
             label5 = new Label();
@@ -41,10 +43,18 @@
             txtChoiceB = new uc.ucTextBox();
             txtChoiceC = new uc.ucTextBox();
             txtChoiceD = new uc.ucTextBox();
+            txtAnswer = new uc.ucTextBox();
             btnAdd = new Button();
             btnCancel = new Button();
-            txtAnswer = new uc.ucTextBox();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            rbtnA = new RadioButton();
+            rbtnB = new RadioButton();
+            rbtnC = new RadioButton();
+            rbtnD = new RadioButton();
+            errorProvider = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -54,6 +64,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(label7, 0, 7);
             tableLayoutPanel1.Controls.Add(label6, 0, 6);
             tableLayoutPanel1.Controls.Add(lblQuestionNumber, 1, 0);
             tableLayoutPanel1.Controls.Add(label5, 0, 5);
@@ -66,13 +77,14 @@
             tableLayoutPanel1.Controls.Add(txtChoiceB, 1, 3);
             tableLayoutPanel1.Controls.Add(txtChoiceC, 1, 4);
             tableLayoutPanel1.Controls.Add(txtChoiceD, 1, 5);
-            tableLayoutPanel1.Controls.Add(btnAdd, 1, 7);
-            tableLayoutPanel1.Controls.Add(btnCancel, 2, 7);
             tableLayoutPanel1.Controls.Add(txtAnswer, 1, 6);
+            tableLayoutPanel1.Controls.Add(btnAdd, 1, 8);
+            tableLayoutPanel1.Controls.Add(btnCancel, 2, 8);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 7);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
+            tableLayoutPanel1.RowCount = 9;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -80,9 +92,23 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel1.Size = new Size(772, 373);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(772, 423);
             tableLayoutPanel1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Dock = DockStyle.Fill;
+            label7.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.DimGray;
+            label7.Location = new Point(3, 314);
+            label7.Name = "label7";
+            label7.Size = new Size(121, 34);
+            label7.TabIndex = 29;
+            label7.Text = "Answer:";
+            label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -191,15 +217,16 @@
             txtQuestion.IsAlphaNumeric = false;
             txtQuestion.IsAlphaNumericDash = false;
             txtQuestion.Location = new Point(131, 37);
-            txtQuestion.Margin = new Padding(4, 5, 4, 5);
+            txtQuestion.Margin = new Padding(4, 5, 25, 5);
             txtQuestion.Multiline = false;
             txtQuestion.Name = "txtQuestion";
             txtQuestion.Padding = new Padding(4);
             txtQuestion.PasswordChar = false;
-            txtQuestion.Size = new Size(637, 37);
+            txtQuestion.Size = new Size(616, 37);
             txtQuestion.TabIndex = 0;
             txtQuestion.Texts = "";
             txtQuestion.UnderlinedStyle = false;
+            txtQuestion._TextChanged += txt_TextChanged;
             // 
             // txtChoiceA
             // 
@@ -216,15 +243,16 @@
             txtChoiceA.IsAlphaNumeric = false;
             txtChoiceA.IsAlphaNumericDash = false;
             txtChoiceA.Location = new Point(131, 84);
-            txtChoiceA.Margin = new Padding(4, 5, 4, 5);
+            txtChoiceA.Margin = new Padding(4, 5, 25, 5);
             txtChoiceA.Multiline = false;
             txtChoiceA.Name = "txtChoiceA";
             txtChoiceA.Padding = new Padding(4);
             txtChoiceA.PasswordChar = false;
-            txtChoiceA.Size = new Size(637, 37);
+            txtChoiceA.Size = new Size(616, 37);
             txtChoiceA.TabIndex = 1;
             txtChoiceA.Texts = "";
             txtChoiceA.UnderlinedStyle = false;
+            txtChoiceA._TextChanged += txt_TextChanged;
             // 
             // txtChoiceB
             // 
@@ -241,15 +269,16 @@
             txtChoiceB.IsAlphaNumeric = false;
             txtChoiceB.IsAlphaNumericDash = false;
             txtChoiceB.Location = new Point(131, 131);
-            txtChoiceB.Margin = new Padding(4, 5, 4, 5);
+            txtChoiceB.Margin = new Padding(4, 5, 25, 5);
             txtChoiceB.Multiline = false;
             txtChoiceB.Name = "txtChoiceB";
             txtChoiceB.Padding = new Padding(4);
             txtChoiceB.PasswordChar = false;
-            txtChoiceB.Size = new Size(637, 37);
+            txtChoiceB.Size = new Size(616, 37);
             txtChoiceB.TabIndex = 2;
             txtChoiceB.Texts = "";
             txtChoiceB.UnderlinedStyle = false;
+            txtChoiceB._TextChanged += txt_TextChanged;
             // 
             // txtChoiceC
             // 
@@ -266,15 +295,16 @@
             txtChoiceC.IsAlphaNumeric = false;
             txtChoiceC.IsAlphaNumericDash = false;
             txtChoiceC.Location = new Point(131, 178);
-            txtChoiceC.Margin = new Padding(4, 5, 4, 5);
+            txtChoiceC.Margin = new Padding(4, 5, 25, 5);
             txtChoiceC.Multiline = false;
             txtChoiceC.Name = "txtChoiceC";
             txtChoiceC.Padding = new Padding(4);
             txtChoiceC.PasswordChar = false;
-            txtChoiceC.Size = new Size(637, 37);
+            txtChoiceC.Size = new Size(616, 37);
             txtChoiceC.TabIndex = 3;
             txtChoiceC.Texts = "";
             txtChoiceC.UnderlinedStyle = false;
+            txtChoiceC._TextChanged += txt_TextChanged;
             // 
             // txtChoiceD
             // 
@@ -291,49 +321,16 @@
             txtChoiceD.IsAlphaNumeric = false;
             txtChoiceD.IsAlphaNumericDash = false;
             txtChoiceD.Location = new Point(131, 225);
-            txtChoiceD.Margin = new Padding(4, 5, 4, 5);
+            txtChoiceD.Margin = new Padding(4, 5, 25, 5);
             txtChoiceD.Multiline = false;
             txtChoiceD.Name = "txtChoiceD";
             txtChoiceD.Padding = new Padding(4);
             txtChoiceD.PasswordChar = false;
-            txtChoiceD.Size = new Size(637, 37);
+            txtChoiceD.Size = new Size(616, 37);
             txtChoiceD.TabIndex = 4;
             txtChoiceD.Texts = "";
             txtChoiceD.UnderlinedStyle = false;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnAdd.BackColor = Color.FromArgb(192, 255, 255);
-            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(68, 114, 196);
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.DimGray;
-            btnAdd.Location = new Point(130, 319);
-            btnAdd.Margin = new Padding(3, 5, 3, 5);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(316, 49);
-            btnAdd.TabIndex = 6;
-            btnAdd.Text = "ADD (+)";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnCancel.BackColor = Color.FromArgb(192, 255, 255);
-            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(68, 114, 196);
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.DimGray;
-            btnCancel.Location = new Point(452, 319);
-            btnCancel.Margin = new Padding(3, 5, 3, 5);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(317, 49);
-            btnCancel.TabIndex = 7;
-            btnCancel.Text = "CANCEL";
-            btnCancel.UseVisualStyleBackColor = false;
-            btnCancel.Click += btnCancel_Click;
+            txtChoiceD._TextChanged += txt_TextChanged;
             // 
             // txtAnswer
             // 
@@ -350,21 +347,132 @@
             txtAnswer.IsAlphaNumeric = false;
             txtAnswer.IsAlphaNumericDash = false;
             txtAnswer.Location = new Point(131, 272);
-            txtAnswer.Margin = new Padding(4, 5, 4, 5);
+            txtAnswer.Margin = new Padding(4, 5, 25, 5);
             txtAnswer.Multiline = false;
             txtAnswer.Name = "txtAnswer";
             txtAnswer.Padding = new Padding(4);
             txtAnswer.PasswordChar = false;
-            txtAnswer.Size = new Size(637, 37);
-            txtAnswer.TabIndex = 5;
+            txtAnswer.Size = new Size(616, 37);
+            txtAnswer.TabIndex = 6;
             txtAnswer.Texts = "";
             txtAnswer.UnderlinedStyle = false;
+            txtAnswer._TextChanged += txt_TextChanged;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnAdd.BackColor = Color.FromArgb(192, 255, 255);
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(68, 114, 196);
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.DimGray;
+            btnAdd.Location = new Point(130, 353);
+            btnAdd.Margin = new Padding(3, 5, 3, 5);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(316, 49);
+            btnAdd.TabIndex = 6;
+            btnAdd.Text = "ADD (+)";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnCancel.BackColor = Color.FromArgb(192, 255, 255);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(68, 114, 196);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.DimGray;
+            btnCancel.Location = new Point(452, 353);
+            btnCancel.Margin = new Padding(3, 5, 3, 5);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(317, 49);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "CANCEL";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.BackColor = Color.White;
+            tableLayoutPanel2.ColumnCount = 4;
+            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel2, 2);
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.Controls.Add(rbtnA, 0, 0);
+            tableLayoutPanel2.Controls.Add(rbtnB, 1, 0);
+            tableLayoutPanel2.Controls.Add(rbtnC, 2, 0);
+            tableLayoutPanel2.Controls.Add(rbtnD, 3, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(127, 314);
+            tableLayoutPanel2.Margin = new Padding(0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(645, 34);
+            tableLayoutPanel2.TabIndex = 30;
+            // 
+            // rbtnA
+            // 
+            rbtnA.AutoSize = true;
+            rbtnA.Checked = true;
+            rbtnA.Dock = DockStyle.Fill;
+            rbtnA.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnA.Location = new Point(3, 3);
+            rbtnA.Name = "rbtnA";
+            rbtnA.Size = new Size(155, 28);
+            rbtnA.TabIndex = 0;
+            rbtnA.TabStop = true;
+            rbtnA.Text = "A";
+            rbtnA.UseVisualStyleBackColor = true;
+            // 
+            // rbtnB
+            // 
+            rbtnB.AutoSize = true;
+            rbtnB.Dock = DockStyle.Fill;
+            rbtnB.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnB.Location = new Point(164, 3);
+            rbtnB.Name = "rbtnB";
+            rbtnB.Size = new Size(155, 28);
+            rbtnB.TabIndex = 1;
+            rbtnB.Text = "B";
+            rbtnB.UseVisualStyleBackColor = true;
+            // 
+            // rbtnC
+            // 
+            rbtnC.AutoSize = true;
+            rbtnC.Dock = DockStyle.Fill;
+            rbtnC.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnC.Location = new Point(325, 3);
+            rbtnC.Name = "rbtnC";
+            rbtnC.Size = new Size(155, 28);
+            rbtnC.TabIndex = 2;
+            rbtnC.Text = "C";
+            rbtnC.UseVisualStyleBackColor = true;
+            // 
+            // rbtnD
+            // 
+            rbtnD.AutoSize = true;
+            rbtnD.Dock = DockStyle.Fill;
+            rbtnD.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnD.Location = new Point(486, 3);
+            rbtnD.Name = "rbtnD";
+            rbtnD.Size = new Size(156, 28);
+            rbtnD.TabIndex = 3;
+            rbtnD.Text = "D";
+            rbtnD.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // MultipleChoiceModal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(772, 373);
+            ClientSize = new Size(772, 423);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "MultipleChoiceModal";
@@ -373,6 +481,9 @@
             Load += MultipleChoiceModal_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -395,5 +506,16 @@
         private uc.ucTextBox txtChoiceD;
         private Label label6;
         private uc.ucTextBox txtAnswer;
+        private Label label7;
+        private TableLayoutPanel tableLayoutPanel2;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
+        private RadioButton rbtnA;
+        private RadioButton rbtnB;
+        private RadioButton rbtnC;
+        private RadioButton rbtnD;
+        private ErrorProvider errorProvider;
     }
 }

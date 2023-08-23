@@ -11,7 +11,8 @@ namespace BAR.Core.Classes
     {
         public static string UserName { get; set; }
         public static string Name { get; set; }
-        public static bool isAdmin { get; set; } = true;
+        public static bool isAdmin { get; set; }
+        public static string Grade { get; set; }
         public static List<MenuNavigation> Menu { get; set; }
     }
 }

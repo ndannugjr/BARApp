@@ -110,3 +110,11 @@ C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\ref
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.pdb
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.genruntimeconfig.cache
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\ref\BARApp.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.DbViewer.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.Activities.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.uc.ucQuizCard.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.Modal.ActivityModal.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.ActivityPages.NonVoice.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.ActivityPages.ReadingCompre.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.ActivityPages.Voice.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.uc.ucVoiceCard.resources

@@ -15,7 +15,116 @@ namespace BAR.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.9");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
+
+            modelBuilder.Entity("BAR.Data.ActivityDescription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ActivityHeaderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("QuestionType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActivityDescription");
+                });
+
+            modelBuilder.Entity("BAR.Data.ActivityHeader", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ActivityType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Grade")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsPosted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SchoolYear")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActivityHeader");
+                });
+
+            modelBuilder.Entity("BAR.Data.ActivityQuestions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ActivityDescriptionId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ChoiceA")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ChoiceB")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ChoiceC")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ChoiceD")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActivityQuestions");
+                });
+
+            modelBuilder.Entity("BAR.Data.ActivityVoiceNonVoiceDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ActivityDescriptionId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActivityVoiceNonVoiceDetails");
+                });
 
             modelBuilder.Entity("BAR.Data.MenuNavigation", b =>
                 {

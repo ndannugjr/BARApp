@@ -29,5 +29,11 @@ namespace BAR.Data
         public DbSet<User> Users { get; set; }
         public DbSet<UserActivityLog> UserActivityLogs { get; set; }
         public  DbSet<MenuNavigation>  MenuNavigations { get; set; }
+        public DbSet<ActivityHeader> ActivityHeader { get; set; }
+        public DbSet<ActivityDescription> ActivityDescription { get; set; }
+        public DbSet<ActivityQuestions> ActivityQuestions { get; set; }
+        public DbSet<ActivityVoiceNonVoiceDetails> ActivityVoiceNonVoiceDetails { get; set; }
+
+
     }
 }

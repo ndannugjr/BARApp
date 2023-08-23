@@ -109,7 +109,7 @@
             txtUserName.TabIndex = 1;
             txtUserName.Texts = "admin";
             txtUserName.UnderlinedStyle = false;
-            txtUserName._TextChanged += txtUserName_TextChanged;
+            txtUserName._TextChanged += txt_TextChanged;
             txtUserName.KeyDown += txtUserName_KeyDown;
             // 
             // label2
@@ -149,7 +149,7 @@
             txtPassword.TabIndex = 3;
             txtPassword.Texts = "123456";
             txtPassword.UnderlinedStyle = false;
-            txtPassword._TextChanged += txtPassword_TextChanged;
+            txtPassword._TextChanged += txt_TextChanged;
             txtPassword.KeyDown += txtUserName_KeyDown;
             // 
             // btnLogin
@@ -213,7 +213,6 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BE A READER!";
-            Load += Login_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();

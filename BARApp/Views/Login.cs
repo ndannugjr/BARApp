@@ -69,31 +69,10 @@ namespace BARApp.Views
         }
 
 
-
-        private void Login_Load(object sender, EventArgs e)
+        private void txt_TextChanged(object sender, EventArgs e)
         {
-
-            //string basePath = @"C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BAR.Data\\bin\\Debug\\net6.0\\DB";
-
-
-            //string connectionString = "DataSource=" + System.IO.Path.Combine(basePath, "BarDB1.db");
-            //using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-            //{
-            //    connection.Open();
-
-            //    DataTable tableSchema = connection.GetSchema("Tables");
-
-            //    foreach (DataRow row in tableSchema.Rows)
-            //    {
-            //        string tableName = (string)row["TABLE_NAME"];
-            //        Console.WriteLine(tableName);
-            //    }
-            //}
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-            errorProvider.SetError(txtUserName, "");
+            var control = ((TextBox)sender).Parent;
+            errorProvider.SetError(control, "");
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

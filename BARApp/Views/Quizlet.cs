@@ -15,6 +15,8 @@ using BARApp.Views.Modal;
 using BAR.Core.Models;
 using BAR.Core.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Net.NetworkInformation;
+using BAR.Factory;
 
 namespace BARApp.Views
 {
@@ -23,20 +25,22 @@ namespace BARApp.Views
         private bool isPlaceholder1Active = true;
         private bool isPlaceholder2Active = true;
         private bool isPlaceholder3Active = true;
-        private string nonVoicePlaceHolderText = "Please input words in a Semicolon-Separated format (e.g. Chair; Climbing; Zebra)\r\n";
+        private string nonVoicePlaceHolderText = "Please input words in a Semicolon-Separated format (e.g. Chair; Climbing; Zebra)";
         private string voicePlaceHolderText = "Please input words/sentence in a Semicolon-Separated format (e.g. Maricris went to a birthday party on Saturday; The boats are floating along the lakeshore; Island)";
 
         private string readingComprePlaceHolderText = "Please input text here... ";
+
         private List<QuestionaireModel> questionaire;
-        private int pnlReadingCompreInitialHeight = 400;
+        private int pnlReadingCompreInitialHeight = 500;
 
-        public static Quizlet _quizletInstace;
+        int ucMultipleChoiceInitialHeight = 256;
 
-        int ucMultipleChoiceInitialHeight = 206;
+        QuizletFactory factory;
         public Quizlet()
         {
             InitializeComponent();
             questionaire = new List<QuestionaireModel>();
+            factory = new QuizletFactory();
 
             rtbNonVoice.Text = nonVoicePlaceHolderText;
             rtbNonVoice.ForeColor = SystemColors.GrayText;
@@ -51,19 +55,38 @@ namespace BARApp.Views
             ucSpeechControlNonVoice1.TextList = nonVoicePlaceHolderText.Split(";").ToList();
             ucSpeechControlReadingCompre1.TextList = readingComprePlaceHolderText.Split(";").ToList();
 
+            cbType.DisplayMember = "Description";
+            cbType.ValueMember = "Value";
+            cbType.DataSource = Enum.GetValues(typeof(ActivityType))
+                .Cast<Enum>()
+                .Select(value => new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType()
+                    .GetField(value.ToString()), typeof(DescriptionAttribute))
+                    as DescriptionAttribute).Description,
+                    value
+                })
+                .OrderBy(item => item.value)
+                .ToList();
 
-            // pnlReadingCompreInitialHeight = pnlReadingCompre.Height;
+            cbGrade.DataSource = Enum.GetValues(typeof(Grade));
 
-            _quizletInstace = this;
+            cbSchoolYear.DisplayMember = "Description";
+            cbSchoolYear.ValueMember = "Value";
+            cbSchoolYear.DataSource = Enum.GetValues(typeof(SchoolYear))
+                .Cast<Enum>()
+                .Select(value => new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType()
+                    .GetField(value.ToString()), typeof(DescriptionAttribute))
+                    as DescriptionAttribute).Description,
+                    value
+                })
+                .OrderBy(item => item.value)
+                .ToList();
 
-            List<string> descriptions = GetEnumDescriptions<ActivityType>();
 
-            foreach (string description in descriptions)
-            {
-                cbType.Items.Add(description);
-            }
-
-
+            //factory.GetQuiz(7);
         }
 
         public List<string> GetEnumDescriptions<TEnum>() where TEnum : Enum
@@ -85,6 +108,8 @@ namespace BARApp.Views
             {
                 rtbNonVoice.Text = "";
                 rtbNonVoice.ForeColor = SystemColors.ControlText;
+                rtbNonVoice.BackColor = Color.White;
+
                 isPlaceholder1Active = false;
             }
         }
@@ -105,6 +130,7 @@ namespace BARApp.Views
             {
                 rtbVoice.Text = "";
                 rtbVoice.ForeColor = SystemColors.ControlText;
+                rtbVoice.BackColor = Color.White;
                 isPlaceholder2Active = false;
             }
         }
@@ -135,6 +161,8 @@ namespace BARApp.Views
             {
                 rtbReadingCompre.Text = "";
                 rtbReadingCompre.ForeColor = SystemColors.ControlText;
+                rtbReadingCompre.BackColor = Color.White;
+                rtbReadingCompre.ForeColor = Color.DimGray;
                 isPlaceholder3Active = false;
             }
         }
@@ -144,27 +172,29 @@ namespace BARApp.Views
         {
             if (rtbVoice.SelectedText.Length > 0)
             {
-                ucSpeechControlVoice1.TextList = rtbVoice.Text.Split(";").ToList();
+                ucSpeechControlVoice1.TextList = rtbVoice.Text.Trim().Split(";").ToList();
             }
             else
-                ucSpeechControlVoice1.TextList = rtbVoice.Text.Split(";").ToList();
+                ucSpeechControlVoice1.TextList = rtbVoice.Text.Trim().Split(";").ToList();
         }
 
         private void rtbNonVoice_TextChanged(object sender, EventArgs e)
         {
-            ucSpeechControlNonVoice1.TextList = rtbNonVoice.Text.Split(";").ToList();
+            ucSpeechControlNonVoice1.TextList = rtbNonVoice.Text.Trim().Split(";").ToList();
         }
 
         private void rtbReadingCompre_TextChanged(object sender, EventArgs e)
         {
-            string titleText = txtTitle1.Texts;
+            string titleText = txtTitle1.Texts.Trim();
             ucSpeechControlReadingCompre1.TextList = (string.Format("{0};{1}",
                 titleText, rtbReadingCompre.Text)).Split(";").ToList();
         }
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {
-            string titleText = txtTitle1.Texts;
+            txtTitle1.BackColor = Color.White;
+
+            string titleText = txtTitle1.Texts.Trim();
             ucSpeechControlReadingCompre1.TextList = (titleText != string.Empty
                 ? string.Format("Title: {0};{1}", titleText, rtbReadingCompre.Text)
                 : rtbReadingCompre.Text).Split(";").ToList();
@@ -197,24 +227,89 @@ namespace BARApp.Views
         private void InitializeQuestinaireControls(QuestionaireModel model)
         {
             var ucMc = new ucMultipleChoice(model);
-            if (model.Type == "MC")
+            //if (model.Type == "MC")
+            //{
+            pnlReadingCompre.Height += ucMc.Height;
+            tlpQuestions.RowStyles.Add(new RowStyle());
+            tlpQuestions.Controls.Add(ucMc, 0, model.ItemNo);
+            //}
+            //else
+            //{
+            //    pnlReadingCompre.Height += ucMc.Height;
+            //    tlpQuestions.RowStyles.Add(new RowStyle());
+            //    tlpQuestions.Controls.Add(ucMc, 0, model.ItemNo);
+            //}
+
+        }
+
+        private bool IsValid()
+        {
+            bool _isValid = true;
+            if (rtbNonVoice.Text == nonVoicePlaceHolderText)
             {
-                pnlReadingCompre.Height += ucMc.Height;
-                tlpQuestions.RowStyles.Add(new RowStyle());
-                tlpQuestions.Controls.Add(ucMc, 0, model.ItemNo);
+                rtbNonVoice.BackColor = Color.Red;
+                rtbNonVoice.ForeColor = Color.White;
+                _isValid = false;
             }
-            else
+
+            if (rtbVoice.Text == voicePlaceHolderText)
             {
-                pnlReadingCompre.Height += ucMc.Height;
-                tlpQuestions.RowStyles.Add(new RowStyle());
-                tlpQuestions.Controls.Add(ucMc, 0, model.ItemNo);
+                rtbVoice.BackColor = Color.Red;
+                rtbVoice.ForeColor = Color.White;
+                _isValid = false;
             }
+
+            if (rtbReadingCompre.Text == readingComprePlaceHolderText)
+            {
+                rtbReadingCompre.BackColor = Color.Red;
+                rtbReadingCompre.ForeColor = Color.White;
+                _isValid = false;
+            }
+
+            if (txtTitle1.Texts == string.Empty)
+            {
+                txtTitle1.BackColor = Color.Red;
+                _isValid = false;
+            }
+
+            if (tlpQuestions.Controls.OfType<ucMultipleChoice>().Count() <= 0)
+            {
+                MessageBox.Show("Please input questions for your Reading comprehension", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _isValid = false;
+            }
+
+            return _isValid;
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (IsValid())
+            {
+                List<QuestionaireModel> questions = new List<QuestionaireModel>();
+                List<ucMultipleChoice> ucontrols = tlpQuestions.Controls.OfType<ucMultipleChoice>().ToList();
+                foreach (ucMultipleChoice u in ucontrols)
+                {
+                    questions.Add(u.Model);
+                };
 
+                QuizletModel model = new QuizletModel()
+                {
+                    ActivityType = cbType.SelectedValue.ToString(),
+                    Grade = cbGrade.SelectedValue.ToString(),
+                    SchoolYear = cbSchoolYear.SelectedValue.ToString(),
+                    Voice = rtbVoice.Text.Split(";").ToList(),
+                    NonVoice = rtbNonVoice.Text.Split(";").ToList(),
+                    ReadingComprehension = new ReadingCompre()
+                    {
+                        Title = txtTitle1.Texts,
+                        Description = rtbReadingCompre.Text,
+                        Questions = questions
+                    }
+                };
+
+                factory.SaveQuizlet(model);
+            }
         }
 
         private void tlpQuestions_ControlAdded(object sender, ControlEventArgs e)
@@ -224,12 +319,12 @@ namespace BARApp.Views
             if (ucontrols.Count > 0)
             {
                 pnlReadingCompre.Height = pnlReadingCompreInitialHeight + (ucMultipleChoiceInitialHeight * ucontrols.Count);
-                tableLayoutPanel2.RowStyles[5] = new RowStyle(SizeType.Absolute, 400 + (ucMultipleChoiceInitialHeight * ucontrols.Count));
+                tableLayoutPanel2.RowStyles[5] = new RowStyle(SizeType.Absolute, pnlReadingCompreInitialHeight + (ucMultipleChoiceInitialHeight * ucontrols.Count));
             }
             else
             {
                 pnlReadingCompre.Height = pnlReadingCompreInitialHeight;
-                tableLayoutPanel2.RowStyles[5] = new RowStyle(SizeType.Absolute, 200);
+                tableLayoutPanel2.RowStyles[5] = new RowStyle(SizeType.Absolute, 250);
             }
 
             tableLayoutPanel3.PerformLayout();
@@ -247,18 +342,11 @@ namespace BARApp.Views
             {
                 uControl.ItemNo = count++;
                 questionaire.Add(uControl.Model);
-                //tlpQuestions.Controls.Remove(uControl);
-                //InitializeQuestinaireControls(uControl.Model);
             }
-
-            //foreach (var c in questionaire)
-            //{
-            //    InitializeQuestinaireControls(c);
-            //}
 
             if (ucontrols.Count > 0)
             {
-                tableLayoutPanel2.RowStyles[5] = new RowStyle(SizeType.Absolute, 400 + (ucMultipleChoiceInitialHeight * ucontrols.Count));
+                tableLayoutPanel2.RowStyles[5] = new RowStyle(SizeType.Absolute, pnlReadingCompreInitialHeight + (ucMultipleChoiceInitialHeight * ucontrols.Count));
                 pnlReadingCompre.Height = pnlReadingCompreInitialHeight + (ucMultipleChoiceInitialHeight * ucontrols.Count);
             }
             else

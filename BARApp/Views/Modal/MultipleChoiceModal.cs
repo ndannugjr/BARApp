@@ -1,4 +1,5 @@
 ﻿using BAR.Core.Models;
+using BARApp.uc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +39,30 @@ namespace BARApp.Views.Modal
             txtChoiceB.Texts = model.ChoiceB;
             txtChoiceC.Texts = model.ChoiceC;
             txtChoiceD.Texts = model.ChoiceD;
-            txtAnswer.Texts = model.Answer;
+
+            if (_type != "MC")
+                txtAnswer.Texts = model.Answer;
+            else
+            {
+                switch (model.Answer)
+                {
+                    case "A":
+                        rbtnA.Checked = true;
+                        break;
+                    case "B":
+                        rbtnB.Checked = true;
+                        break;
+                    case "C":
+                        rbtnC.Checked = true;
+                        break;
+                    case "D":
+                        rbtnD.Checked = true;
+                        break;
+                    default:
+                        MessageBox.Show("The answer is invalid!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
+            }
             HideRows();
 
             btnAdd.Text = "Save";
@@ -54,44 +78,127 @@ namespace BARApp.Views.Modal
                     tableLayoutPanel1.RowStyles[i].Height = 0;
                 }
 
+                tableLayoutPanel1.RowStyles[7].SizeType = SizeType.Absolute;
+                tableLayoutPanel1.RowStyles[7].Height = 0;
+
                 this.Size = new System.Drawing.Size(790, 230);
                 //txtQuestion.TabIndex = 0;
                 txtAnswer.TabIndex = 1;
                 btnAdd.TabIndex = 2;
                 btnCancel.TabIndex = 3;
                 txtChoiceA.TabIndex = 4;
-                txtChoiceB.TabIndex =5;
-                    txtChoiceC.TabIndex = 6;
-                   txtChoiceD.TabIndex = 7;
-                
+                txtChoiceB.TabIndex = 5;
+                txtChoiceC.TabIndex = 6;
+                txtChoiceD.TabIndex = 7;
+
             }
+            else
+            {
+                tableLayoutPanel1.RowStyles[6].SizeType = SizeType.Absolute;
+                tableLayoutPanel1.RowStyles[6].Height = 0;
+
+                txtAnswer.Visible = false;
+            }
+        }
+
+        private bool IsValid()
+        {
+            bool _isValid = true;
+            if (_type != "MC")
+            {
+                if (txtQuestion.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtQuestion, "Required");
+                    _isValid = false;
+                }
+                if (txtAnswer.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtAnswer, "Required");
+                    _isValid = false;
+                }
+            }
+            else
+            {
+                if (txtQuestion.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtQuestion, "Required");
+                    _isValid = false;
+                }
+                if (txtChoiceA.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtChoiceA, "Required");
+                    _isValid = false;
+                }
+                if (txtChoiceB.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtChoiceB, "Required");
+                    _isValid = false;
+                }
+                if (txtChoiceC.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtChoiceC, "Required");
+                    _isValid = false;
+                }
+                if (txtChoiceD.Texts == string.Empty)
+                {
+                    errorProvider.SetError(txtChoiceD, "Required");
+                    _isValid = false;
+                }
+            }
+
+            return _isValid;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Question = new QuestionaireModel();
-
-            QuestionaireModel m = new QuestionaireModel()
+            if (IsValid())
             {
-                ItemNo = _questionNumber,
-                Type = _type,
-                Question = txtQuestion.Texts,
-                ChoiceA = txtChoiceA.Texts,
-                ChoiceB = txtChoiceB.Texts,
-                ChoiceC = txtChoiceC.Texts,
-                ChoiceD = txtChoiceD.Texts,
-                Answer = txtAnswer.Texts
-            };
+                Question = new QuestionaireModel();
 
-            Question = m;
+                string ans = string.Empty;
+                if (_type == "MC")
+                {
+                    if (rbtnA.Checked)
+                        ans = "A";
+                    if (rbtnB.Checked)
+                        ans = "B";
+                    if (rbtnC.Checked)
+                        ans = "C";
+                    if (rbtnD.Checked)
+                        ans = "D";
+                }
+                else
+                    ans = txtAnswer.Texts;
 
-            this.Close();
+                QuestionaireModel m = new QuestionaireModel()
+                {
+                    ItemNo = _questionNumber,
+                    Type = _type,
+                    Question = txtQuestion.Texts,
+                    ChoiceA = txtChoiceA.Texts,
+                    ChoiceB = txtChoiceB.Texts,
+                    ChoiceC = txtChoiceC.Texts,
+                    ChoiceD = txtChoiceD.Texts,
+                    Answer = ans
+                };
+
+                Question = m;
+
+                this.Close();
+            }
         }
 
         private void MultipleChoiceModal_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            var control = ((TextBox)sender).Parent;
+            errorProvider.SetError(control, "");
+        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
