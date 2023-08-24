@@ -17,6 +17,7 @@ using BAR.Core.Classes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.NetworkInformation;
 using BAR.Factory;
+using BAR.Data.Migrations;
 
 namespace BARApp.Views
 {
@@ -293,14 +294,42 @@ namespace BARApp.Views
                     questions.Add(u.Model);
                 };
 
+                List<QuestionAnswer> voiceQA = new();
+                foreach (var vqaItem in rtbVoice.Text.Split(";").ToList())
+                {
+                    if (vqaItem.Trim() != string.Empty)
+                    {
+                        voiceQA.Add(new QuestionAnswer()
+                        {
+                            Id = 0,
+                            Value = vqaItem,
+                            Answer = string.Empty
+                        });
+                    }
+                }
+
+                List<QuestionAnswer> nonVoiceQA = new();
+                foreach (var nvqaItem in rtbNonVoice.Text.Split(";").ToList())
+                {
+                    if (nvqaItem.Trim() != string.Empty)
+                    {
+                        nonVoiceQA.Add(new QuestionAnswer()
+                        {
+                            Id = 0,
+                            Value = nvqaItem,
+                            Answer = string.Empty
+                        });
+                    }
+                }
+
                 QuizletModel model = new QuizletModel()
                 {
                     ActivityType = cbType.SelectedValue.ToString(),
                     Grade = cbGrade.SelectedValue.ToString(),
                     SchoolYear = cbSchoolYear.SelectedValue.ToString(),
-                    Voice = rtbVoice.Text.Split(";").ToList(),
-                    NonVoice = rtbNonVoice.Text.Split(";").ToList(),
-                    ReadingComprehension = new ReadingCompre()
+                    Voice = voiceQA,
+                    NonVoice = nonVoiceQA,
+                    ReadingComprehension = new ReadingComprehension()
                     {
                         Title = txtTitle1.Texts,
                         Description = rtbReadingCompre.Text,

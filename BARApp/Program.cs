@@ -1,3 +1,4 @@
+using BARApp.uc;
 using BARApp.Views;
 
 namespace BARApp

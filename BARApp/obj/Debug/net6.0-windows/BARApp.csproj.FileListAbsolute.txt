@@ -117,4 +117,12 @@ C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BAR
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.ActivityPages.NonVoice.resources
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.ActivityPages.ReadingCompre.resources
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.ActivityPages.Voice.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.uc.ucNonVoiceCard.resources
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.uc.ucVoiceCard.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.Asio.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.Core.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.Midi.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.Wasapi.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.WinForms.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.WinMM.dll

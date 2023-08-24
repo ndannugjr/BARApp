@@ -64,6 +64,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "ReadingCompre";
             StartPosition = FormStartPosition.CenterScreen;
+            Tag = "Reading Comprehension";
             Text = "ReadingCompre";
             panel1.ResumeLayout(false);
             ResumeLayout(false);

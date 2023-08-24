@@ -12,12 +12,21 @@ namespace BAR.Core.Models
         public string ActivityType { get; set; }
         public string Grade { get; set; }
         public string SchoolYear { get; set; }
-        public List<string> NonVoice { get; set; }
-        public List<string> Voice { get; set; }
-        public ReadingCompre ReadingComprehension { get; set; }
+        public List<QuestionAnswer> NonVoice { get; set; }
+        public List<QuestionAnswer> Voice { get; set; }
+        public ReadingComprehension ReadingComprehension { get; set; }
 
     }
-    public class ReadingCompre
+
+    public class QuestionAnswer
+    {
+        public int Id { get; set; }
+        public int ItemNo { get; set; }
+        public string Value { get; set; }
+        public string Answer { get; set; }
+
+    }
+    public class ReadingComprehension
     {
         public string Title { get; set; }
         public string Description { get; set; }

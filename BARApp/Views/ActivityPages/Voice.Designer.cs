@@ -54,6 +54,7 @@
             tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
             tlpContent.Size = new Size(945, 750);
             tlpContent.TabIndex = 1;
+            tlpContent.Tag = "";
             // 
             // Voice
             // 
@@ -65,6 +66,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Voice";
             StartPosition = FormStartPosition.CenterScreen;
+            Tag = "Voice";
             Text = "Voice";
             panel1.ResumeLayout(false);
             ResumeLayout(false);

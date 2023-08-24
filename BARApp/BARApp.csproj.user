@@ -13,8 +13,11 @@
     <Compile Update="uc\ucTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="uc\ucNonVoiceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="uc\ucVoiceCard.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\Activities.cs">
       <SubType>Form</SubType>

@@ -26,17 +26,21 @@ namespace BAR.Factory
             {
                 var quizzes = _dbContext.ActivityHeader.Where(s => s.Grade == RuntimeInfo.Grade && s.IsPosted && !s.IsDeleted).OrderBy(o => o.Id).ToList();
 
-                foreach (var at in quizzes.Select(s => s.ActivityType).Distinct())
+                foreach (var sy in quizzes.Select(s => s.SchoolYear).Distinct())
                 {
-                    int count = 1;
-                    foreach (var act in quizzes.Where(s => s.ActivityType == at))
+                    foreach (var at in quizzes.Where(x => x.SchoolYear == sy).Select(s => s.ActivityType).Distinct())
                     {
-                        QuizCardModel qm = new QuizCardModel() { 
-                        ActivityType = act.ActivityType + " #" + count.ToString(),
-                        SchoolYear = act.SchoolYear,
-                        QuizId = act.Id
-                        };
-                        m.Add(qm);
+                        int count = 1;
+                        foreach (var act in quizzes.Where(s => s.ActivityType == at))
+                        {
+                            QuizCardModel qm = new QuizCardModel()
+                            {
+                                ActivityType = act.ActivityType + " #" + count++,
+                                SchoolYear = act.SchoolYear,
+                                QuizId = act.Id
+                            };
+                            m.Add(qm);
+                        }
                     }
                 }
 
@@ -55,14 +59,14 @@ namespace BAR.Factory
                 m.ActivityType = header.ActivityType;
                 m.Grade = header.Grade;
                 m.SchoolYear = header.SchoolYear;
-                // m.Voice = 
+
                 m.Voice = (from ah in _dbContext.ActivityHeader
                            join
                              ad in _dbContext.ActivityDescription on ah.Id equals ad.ActivityHeaderId
                            join
                              acnd in _dbContext.ActivityVoiceNonVoiceDetails on ad.Id equals acnd.ActivityDescriptionId
                            where ah.Id == id && ad.QuestionType == "Voice"
-                           select acnd.Text
+                           select new QuestionAnswer { Id = acnd.Id, Value = acnd.Text, Answer = ""  }
                              ).ToList();
                 m.NonVoice = (from ah in _dbContext.ActivityHeader
                               join
@@ -70,7 +74,7 @@ namespace BAR.Factory
                               join
                              acnd in _dbContext.ActivityVoiceNonVoiceDetails on ad.Id equals acnd.ActivityDescriptionId
                               where ah.Id == id && ad.QuestionType == "NonVoice"
-                              select acnd.Text
+                              select new QuestionAnswer { Id = acnd.Id, Value = acnd.Text, Answer = "" }
                              ).ToList();
 
                 var readingCompre = (from ah in _dbContext.ActivityHeader
@@ -92,6 +96,7 @@ namespace BAR.Factory
                 {
                     qModelList.Add(new QuestionaireModel
                     {
+                        ItemId =item.Id,
                         ItemNo = i++,
                         ChoiceA = item.ChoiceA,
                         ChoiceB = item.ChoiceB,
@@ -101,7 +106,7 @@ namespace BAR.Factory
                     });
                 }
 
-                ReadingCompre r = new ReadingCompre() { 
+                ReadingComprehension r = new ReadingComprehension() { 
                 Title = readingCompre.FirstOrDefault().Title,
                 Description = readingCompre.FirstOrDefault().Description,
                 Questions = qModelList
@@ -118,8 +123,6 @@ namespace BAR.Factory
         {
             try
             {
-                //using (var scope = new TransactionScope())
-                //{
                 using (var _dbContext = new ApplicationDbContext())
                 {
                     ActivityHeader header = new ActivityHeader()
@@ -140,7 +143,7 @@ namespace BAR.Factory
                     _dbContext.Add(vdesc);
                     _dbContext.SaveChanges();
 
-                    foreach (var v in model.Voice)
+                    foreach (var v in model.Voice.Select(s => s.Value))
                     {
                         ActivityVoiceNonVoiceDetails details = new ActivityVoiceNonVoiceDetails()
                         {
@@ -159,7 +162,7 @@ namespace BAR.Factory
                     _dbContext.Add(nvdesc);
                     _dbContext.SaveChanges();
 
-                    foreach (var nv in model.NonVoice)
+                    foreach (var nv in model.NonVoice.Select(s => s.Value))
                     {
                         ActivityVoiceNonVoiceDetails details = new ActivityVoiceNonVoiceDetails()
                         {
@@ -196,9 +199,7 @@ namespace BAR.Factory
                     }
                     _dbContext.SaveChanges();
                 }
-                // _dbContext.SaveChanges();
-                //    scope.Complete();
-                //}
+             
             }
             catch (Exception ex)
             {

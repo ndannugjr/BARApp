@@ -32,6 +32,7 @@ namespace BAR.Factory
                 else
                 {
                     RuntimeInfo.UserName = userData.UserName;
+                    RuntimeInfo.UserId = userData.Id;
                     RuntimeInfo.Name = string.Format("{0} {1} {2}", userData.FirstName, userData.MiddleName.Substring(0, 1) + ".", userData.LastName);
                     RuntimeInfo.isAdmin = userData.IsAdmin;
 
@@ -58,6 +59,10 @@ namespace BAR.Factory
         public void CreateInitialData()
         {
             return;
+            var bc = _dbContext.ActivityHeader.Where(S => S.Id == 9).FirstOrDefault();
+            bc.IsPosted = true;
+            _dbContext.SaveChanges();
+           
             _dbContext = new ApplicationDbContext();
             var update =_dbContext.ActivityHeader.Where(s => s.Grade == "XII").FirstOrDefault();
             update.Grade = "I";

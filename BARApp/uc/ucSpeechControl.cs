@@ -22,6 +22,9 @@ namespace BARApp.uc
             set { textList = value; }
         }
 
+        private bool _isMaleVoice = false;
+        public bool IsMaleVoice { get { return _isMaleVoice; } set { _isMaleVoice = value; } }
+
         SpeechSynthesizer speechSynthesizerObj;
         private bool isPaused;
         public ucSpeechControl()
@@ -44,7 +47,10 @@ namespace BARApp.uc
                 btnPause.Enabled = true;
                 btnStop.Enabled = true;
                 speechSynthesizerObj = new SpeechSynthesizer();
+                if(!IsMaleVoice)
                 speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Teen);
+                else
+                    speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Male, VoiceAge.Teen);
 
                 StartTextToSpeech(textList);
              

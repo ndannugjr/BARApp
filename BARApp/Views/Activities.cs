@@ -15,13 +15,13 @@ namespace BARApp.Views
     public partial class Activities : Form
     {
         QuizletFactory factory;
+      
         public Activities()
         {
             InitializeComponent();
             factory = new QuizletFactory();
             timer.Start();
-
-
+         
             var quizzes = factory.GetQuizList();
             int count = 1;
             foreach (var qcModel in quizzes)
@@ -35,6 +35,7 @@ namespace BARApp.Views
 
         }
 
+       
         private void timer_Tick(object sender, EventArgs e)
         {
             if (lblReminder.ForeColor == Color.Red)

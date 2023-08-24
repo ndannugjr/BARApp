@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f7NlV/pfpPwUfcDKakwzH+4c3R0cdh3bU0+AP8bWmaXL8A27ropu9OFEpRZ/OmEBALG0WFGoZFpMPMT6nnkKVQ==",
+  "dgSpecHash": "HbT6Hc/qwNwWUedBrpENEonS6uVGgz2/pxwJo16kOiJ0YVUVWtkoU/TaW3Wbo/1AWAv/n8cx3iU1W8K+91JR9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jiks Dannug\\Documents\\GitHub\\BARApp\\BARApp\\BARApp.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,13 @@
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio\\2.2.0\\naudio.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio.asio\\2.2.0\\naudio.asio.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio.core\\2.2.0\\naudio.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio.midi\\2.2.0\\naudio.midi.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio.wasapi\\22.0.0\\naudio.wasapi.22.0.0.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio.winforms\\2.2.0\\naudio.winforms.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jiks Dannug\\.nuget\\packages\\naudio.winmm\\2.2.0\\naudio.winmm.2.2.0.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Jiks Dannug\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

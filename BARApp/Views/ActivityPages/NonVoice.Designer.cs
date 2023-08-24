@@ -45,6 +45,8 @@
             // 
             // tlpContent
             // 
+            tlpContent.AutoScroll = true;
+            tlpContent.BackColor = Color.White;
             tlpContent.ColumnCount = 1;
             tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpContent.Dock = DockStyle.Fill;
@@ -64,6 +66,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "NonVoice";
             StartPosition = FormStartPosition.CenterScreen;
+            Tag = "Non-Voice";
             Text = "NonVoice";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -73,5 +76,6 @@
 
         private Panel panel1;
         private TableLayoutPanel tlpContent;
+        private Button btnChangeVoice;
     }
 }
