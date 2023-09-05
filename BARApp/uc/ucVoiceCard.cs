@@ -75,7 +75,7 @@ namespace BARApp.uc
                 waveIn.DataAvailable += WaveIn_DataAvailable;
                 string fileName = string.Format("{0}_{1}.wav", RuntimeInfo.UserId, DateTime.Now.ToString("ddMMyyyyHHmmssff"));
                 outputFilePath = System.IO.Path.Combine(outputFilePath, fileName);
-                _model.Answer = outputFilePath;
+                _model.StudentAnswer = outputFilePath;
                 writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
                 recordingElapsedTime = new TimeSpan();
                 waveIn.StartRecording();
@@ -95,19 +95,15 @@ namespace BARApp.uc
 
 
                 tableLayoutPanel1.BackColor = Color.LightGreen;
-                ChangeForeColor(btnPlay);
-                ChangeForeColor(btnRecord);
-                ChangeForeColor(lblItem);
-                ChangeForeColor(lblQuestion);
 
+                lblItem.ForeColor = Color.Black;
+                lblQuestion.ForeColor = Color.Black;
+                btnPlay.ForeColor = Color.Black;
+                btnRecord.ForeColor = Color.Black;
 
             }
         }
 
-        private void ChangeForeColor(Control ctrl)
-        {
-            ctrl.ForeColor = Color.White;
-        }
 
         private void WaveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
@@ -123,7 +119,7 @@ namespace BARApp.uc
             if (waveIn == null)
             {
                 elapsedTime = new TimeSpan();
-               
+
                 if (outputDevice == null || outputDevice.PlaybackState != PlaybackState.Playing)
                 {
                     isPlayback = true;
@@ -132,10 +128,12 @@ namespace BARApp.uc
                     {
                         audioFile = new AudioFileReader(filePath);
                     }
-                    catch {
+                    catch
+                    {
                         isPlayback = false;
                         timer.Enabled = false;
-                        return; }
+                        return;
+                    }
                     outputDevice = new WaveOutEvent();
                     outputDevice.Init(audioFile);
 
@@ -193,7 +191,7 @@ namespace BARApp.uc
                 if (recordingElapsedTime == elapsedTime)
                     isStopSignal = true;
             }
-          
+
         }
     }
 }

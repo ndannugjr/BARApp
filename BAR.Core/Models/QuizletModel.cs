@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,22 +10,65 @@ namespace BAR.Core.Models
 {
     public class QuizletModel
     {
+        public int ActivityHeaderId { get; set; }
         public string ActivityType { get; set; }
         public string Grade { get; set; }
         public string SchoolYear { get; set; }
+        public string SchoolYearDesc
+        {
+            get
+            {
+                return GetSchoolYearDescriptionByValue(SchoolYear);
+            }
+        }
         public List<QuestionAnswer> NonVoice { get; set; }
         public List<QuestionAnswer> Voice { get; set; }
         public ReadingComprehension ReadingComprehension { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public int CreatedBy { get; set; }
+        public DateTime LastUpdatedDate { get; set; }
+        public int LastUpdatedBy { get; set; }
+        public bool IsPosted { get; set; }
+        public DateTime? PostedDate { get; set; }
 
+        static string GetSchoolYearDescriptionByValue(string val)
+        {
+            if (Enum.TryParse(val, out SchoolYear enumValue))
+            {
+                FieldInfo field = enumValue.GetType().GetField(enumValue.ToString());
+
+                if (field != null)
+                {
+                    DescriptionAttribute attribute =
+                        field.GetCustomAttribute(typeof(DescriptionAttribute)) as DescriptionAttribute;
+
+                    if (attribute != null)
+                    {
+                        return attribute.Description;
+                    }
+                }
+            }
+
+            return string.Empty;
+        }
     }
 
     public class QuestionAnswer
     {
-        public int Id { get; set; }
+        public int ActivityVoiceNonVoiceDetailId { get; set; }
         public int ItemNo { get; set; }
         public string Value { get; set; }
-        public string Answer { get; set; }
-
+        public string StudentAnswer { get; set; }
+        public bool IsCorrect
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(StudentAnswer))
+                    return false;
+                else
+                    return Value.Replace("\n", "").Trim().ToUpper() == StudentAnswer.Replace("\n", "").Trim().ToUpper();
+            }
+        }
     }
     public class ReadingComprehension
     {

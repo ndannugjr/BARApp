@@ -22,11 +22,11 @@ namespace BARApp.Views.ActivityPages
 
             int count = 2;
             int itemNoCount = 1;
-            foreach (var q in qa.OrderBy(o => o.Id))
+            foreach (var q in qa.OrderBy(o => o.ActivityVoiceNonVoiceDetailId))
             {
                 q.ItemNo = itemNoCount++;
                 var ucNonVoiceCard = new ucNonVoiceCard(q);
-               // ucNonVoiceCard.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                ucNonVoiceCard.Dock = DockStyle.Top;
 
                 tlpContent.RowStyles.Add(new RowStyle());
                 tlpContent.Controls.Add(ucNonVoiceCard, 0, count++);

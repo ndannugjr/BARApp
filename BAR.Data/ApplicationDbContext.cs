@@ -33,7 +33,7 @@ namespace BAR.Data
         public DbSet<ActivityDescription> ActivityDescription { get; set; }
         public DbSet<ActivityQuestions> ActivityQuestions { get; set; }
         public DbSet<ActivityVoiceNonVoiceDetails> ActivityVoiceNonVoiceDetails { get; set; }
-
+        public DbSet<AnswerSheet> AnswerSheet { get; set; }
 
     }
 }

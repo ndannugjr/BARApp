@@ -7,6 +7,12 @@
     <Compile Update="uc\ucQuizCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="uc\ucQuizDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="uc\ucReadingCompreQuestionCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="uc\ucSpeechControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -49,7 +55,13 @@
     <Compile Update="Views\Modal\MultipleChoiceModal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\QuizDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Quizlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Tester\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

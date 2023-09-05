@@ -60,6 +60,7 @@
             cbGrade = new ComboBox();
             label7 = new Label();
             cbSchoolYear = new ComboBox();
+            chkPost = new CheckBox();
             tableLayoutPanel4 = new TableLayoutPanel();
             button1 = new Button();
             button2 = new Button();
@@ -86,6 +87,8 @@
             tableLayoutPanel1.BackColor = Color.Teal;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(panel2, 0, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel5, 0, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel8, 0, 0);
@@ -97,7 +100,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.Size = new Size(1206, 1102);
+            tableLayoutPanel1.Size = new Size(1206, 853);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -105,10 +108,10 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(tableLayoutPanel2);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 110);
+            panel2.Location = new Point(0, 85);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1206, 881);
+            panel2.Size = new Size(1206, 682);
             panel2.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -139,7 +142,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 250F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(1204, 879);
+            tableLayoutPanel2.Size = new Size(1204, 680);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // label3
@@ -356,11 +359,10 @@
             // 
             // tlpQuestions
             // 
-            tlpQuestions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpQuestions.BackColor = Color.White;
-            tlpQuestions.ColumnCount = 2;
-            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
-            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tlpQuestions.ColumnCount = 1;
+            tlpQuestions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpQuestions.Dock = DockStyle.Fill;
             tlpQuestions.Location = new Point(0, 0);
             tlpQuestions.Margin = new Padding(0);
             tlpQuestions.Name = "tlpQuestions";
@@ -400,6 +402,7 @@
             // ucSpeechControlNonVoice1
             // 
             ucSpeechControlNonVoice1.Dock = DockStyle.Fill;
+            ucSpeechControlNonVoice1.IsMaleVoice = false;
             ucSpeechControlNonVoice1.Location = new Point(358, 3);
             ucSpeechControlNonVoice1.Name = "ucSpeechControlNonVoice1";
             ucSpeechControlNonVoice1.Size = new Size(817, 50);
@@ -409,6 +412,7 @@
             // ucSpeechControlVoice1
             // 
             ucSpeechControlVoice1.Dock = DockStyle.Fill;
+            ucSpeechControlVoice1.IsMaleVoice = false;
             ucSpeechControlVoice1.Location = new Point(358, 309);
             ucSpeechControlVoice1.Name = "ucSpeechControlVoice1";
             ucSpeechControlVoice1.Size = new Size(817, 50);
@@ -418,6 +422,7 @@
             // ucSpeechControlReadingCompre1
             // 
             ucSpeechControlReadingCompre1.Dock = DockStyle.Fill;
+            ucSpeechControlReadingCompre1.IsMaleVoice = false;
             ucSpeechControlReadingCompre1.Location = new Point(358, 615);
             ucSpeechControlReadingCompre1.Name = "ucSpeechControlReadingCompre1";
             ucSpeechControlReadingCompre1.Size = new Size(817, 50);
@@ -432,13 +437,13 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.Controls.Add(btnSave, 1, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(0, 991);
+            tableLayoutPanel5.Location = new Point(0, 767);
             tableLayoutPanel5.Margin = new Padding(0);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.Padding = new Padding(20, 10, 20, 0);
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Size = new Size(1206, 111);
+            tableLayoutPanel5.Size = new Size(1206, 86);
             tableLayoutPanel5.TabIndex = 2;
             // 
             // btnSave
@@ -475,6 +480,7 @@
             tableLayoutPanel8.Controls.Add(cbGrade, 4, 1);
             tableLayoutPanel8.Controls.Add(label7, 5, 1);
             tableLayoutPanel8.Controls.Add(cbSchoolYear, 6, 1);
+            tableLayoutPanel8.Controls.Add(chkPost, 7, 1);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(3, 3);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -482,7 +488,7 @@
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel8.Size = new Size(1200, 104);
+            tableLayoutPanel8.Size = new Size(1200, 79);
             tableLayoutPanel8.TabIndex = 3;
             // 
             // label5
@@ -490,7 +496,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(158, 36);
+            label5.Location = new Point(158, 28);
             label5.Margin = new Padding(3, 5, 3, 0);
             label5.Name = "label5";
             label5.Size = new Size(85, 28);
@@ -505,7 +511,7 @@
             cbType.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbType.ForeColor = Color.DimGray;
             cbType.FormattingEnabled = true;
-            cbType.Location = new Point(249, 34);
+            cbType.Location = new Point(249, 26);
             cbType.Name = "cbType";
             cbType.Size = new Size(315, 36);
             cbType.TabIndex = 1;
@@ -515,7 +521,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(570, 36);
+            label6.Location = new Point(570, 28);
             label6.Margin = new Padding(3, 5, 3, 0);
             label6.Name = "label6";
             label6.Size = new Size(105, 28);
@@ -530,7 +536,7 @@
             cbGrade.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbGrade.ForeColor = Color.DimGray;
             cbGrade.FormattingEnabled = true;
-            cbGrade.Location = new Point(681, 34);
+            cbGrade.Location = new Point(681, 26);
             cbGrade.Name = "cbGrade";
             cbGrade.Size = new Size(151, 36);
             cbGrade.TabIndex = 3;
@@ -540,7 +546,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(838, 36);
+            label7.Location = new Point(838, 28);
             label7.Margin = new Padding(3, 5, 3, 0);
             label7.Name = "label7";
             label7.Size = new Size(47, 28);
@@ -555,10 +561,24 @@
             cbSchoolYear.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbSchoolYear.ForeColor = Color.DimGray;
             cbSchoolYear.FormattingEnabled = true;
-            cbSchoolYear.Location = new Point(891, 34);
+            cbSchoolYear.Location = new Point(891, 26);
             cbSchoolYear.Name = "cbSchoolYear";
             cbSchoolYear.Size = new Size(151, 36);
             cbSchoolYear.TabIndex = 5;
+            // 
+            // chkPost
+            // 
+            chkPost.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            chkPost.AutoSize = true;
+            chkPost.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chkPost.ForeColor = Color.White;
+            chkPost.Location = new Point(1075, 23);
+            chkPost.Margin = new Padding(30, 0, 3, 3);
+            chkPost.Name = "chkPost";
+            chkPost.Size = new Size(122, 32);
+            chkPost.TabIndex = 6;
+            chkPost.Text = "Post";
+            chkPost.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -649,9 +669,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1206, 1102);
+            ClientSize = new Size(1206, 853);
             Controls.Add(tableLayoutPanel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Quizlet";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quizlet";
@@ -674,7 +694,6 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
         private Panel panel2;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
@@ -709,7 +728,6 @@
         private TableLayoutPanel tableLayoutPanel5;
         private Button btnSave;
         private Button button4;
-        private TableLayoutPanel tableLayoutPanel7;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnIdentification;
         private Label label4;
@@ -724,5 +742,7 @@
         private ComboBox cbGrade;
         private Label label7;
         private ComboBox cbSchoolYear;
+        private CheckBox chkPost;
+        private TableLayoutPanel tableLayoutPanel7;
     }
 }

@@ -67,7 +67,7 @@
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(194, 52);
             btnStart.TabIndex = 5;
-            btnStart.Text = "START";
+            btnStart.Text = "Start!";
             btnStart.UseVisualStyleBackColor = false;
             btnStart.Click += btnStart_Click;
             // 

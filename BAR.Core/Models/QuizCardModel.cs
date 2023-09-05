@@ -15,7 +15,7 @@ namespace BAR.Core.Models
         public string SchoolYearDesc { get {
             return "S.Y. " + GetSchoolYearDescriptionByValue(SchoolYear);
             } }
-        public int QuizId { get; set; }
+        public int ActivityHeaderId { get; set; }
 
 
         static string GetSchoolYearDescriptionByValue(string val)

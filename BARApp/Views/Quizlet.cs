@@ -18,6 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.NetworkInformation;
 using BAR.Factory;
 using BAR.Data.Migrations;
+using System.Net.Http;
 
 namespace BARApp.Views
 {
@@ -37,6 +38,9 @@ namespace BARApp.Views
         int ucMultipleChoiceInitialHeight = 256;
 
         QuizletFactory factory;
+
+        bool IsForUpdate = false;
+        private QuizletModel _model;
         public Quizlet()
         {
             InitializeComponent();
@@ -56,6 +60,73 @@ namespace BARApp.Views
             ucSpeechControlNonVoice1.TextList = nonVoicePlaceHolderText.Split(";").ToList();
             ucSpeechControlReadingCompre1.TextList = readingComprePlaceHolderText.Split(";").ToList();
 
+            InitializeCbData();
+
+            //var quizList = factory.GetQuizList();
+
+            //int count = 1;
+            //foreach (var ql in quizList)
+            //{
+            //    var ucQuizDetails = new ucQuizDetails(ql);
+            //    ucQuizDetails.Dock = DockStyle.Top;
+            //    tlpQuizList.RowStyles.Add(new RowStyle());
+            //    tlpQuizList.Controls.Add(ucQuizDetails, 0, count++);
+
+            //    if (count > 1)
+            //        panel1.Height += 76;
+
+            //}
+        }
+
+        public Quizlet(QuizletModel model)
+        {
+            InitializeComponent();
+            _model = model;
+            questionaire = new List<QuestionaireModel>();
+            factory = new QuizletFactory();
+
+            isPlaceholder1Active = false;
+            isPlaceholder2Active = false;
+            isPlaceholder3Active = false;
+
+            List<string> nonVoiceList = model.NonVoice.Select(s => s.Value).ToList();
+            rtbNonVoice.Text = string.Join(";", nonVoiceList);
+
+            List<string> voiceList = model.Voice.Select(s => s.Value).ToList();
+            rtbVoice.Text = string.Join(";", voiceList);
+
+            txtTitle1.Texts = model.ReadingComprehension.Title;
+            rtbReadingCompre.Text = model.ReadingComprehension.Description;
+
+            chkPost.Checked = model.IsPosted;
+
+            ucSpeechControlVoice1.TextList = voiceList;
+            ucSpeechControlNonVoice1.TextList = nonVoiceList;
+            ucSpeechControlReadingCompre1.TextList = string.Format("Title: {0};{1}",
+                model.ReadingComprehension.Title,
+                model.ReadingComprehension.Description)
+                .Split(";").ToList();
+
+
+            questionaire = model.ReadingComprehension.Questions;
+            foreach (var q in questionaire)
+            {
+                InitializeQuestinaireControls(q);
+            }
+
+            InitializeCbData();
+
+
+            cbType.SelectedValue = (ActivityType)Enum.Parse(typeof(ActivityType), model.ActivityType);
+            cbGrade.SelectedText = model.Grade;
+            cbSchoolYear.SelectedValue = (SchoolYear)Enum.Parse(typeof(SchoolYear), model.SchoolYear);
+
+            btnSave.Text = "Update";
+            IsForUpdate = true;
+        }
+
+        private void InitializeCbData()
+        {
             cbType.DisplayMember = "Description";
             cbType.ValueMember = "Value";
             cbType.DataSource = Enum.GetValues(typeof(ActivityType))
@@ -85,9 +156,6 @@ namespace BARApp.Views
                 })
                 .OrderBy(item => item.value)
                 .ToList();
-
-
-            //factory.GetQuiz(7);
         }
 
         public List<string> GetEnumDescriptions<TEnum>() where TEnum : Enum
@@ -285,6 +353,8 @@ namespace BARApp.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool isPosted = chkPost.Checked;
+            DateTime dtNow = DateTime.Now;
             if (IsValid())
             {
                 List<QuestionaireModel> questions = new List<QuestionaireModel>();
@@ -301,9 +371,9 @@ namespace BARApp.Views
                     {
                         voiceQA.Add(new QuestionAnswer()
                         {
-                            Id = 0,
+                            ActivityVoiceNonVoiceDetailId = 0,
                             Value = vqaItem,
-                            Answer = string.Empty
+                            StudentAnswer = string.Empty
                         });
                     }
                 }
@@ -315,20 +385,27 @@ namespace BARApp.Views
                     {
                         nonVoiceQA.Add(new QuestionAnswer()
                         {
-                            Id = 0,
+                            ActivityVoiceNonVoiceDetailId = 0,
                             Value = nvqaItem,
-                            Answer = string.Empty
+                            StudentAnswer = string.Empty
                         });
                     }
                 }
 
                 QuizletModel model = new QuizletModel()
                 {
+                    ActivityHeaderId = IsForUpdate ? _model.ActivityHeaderId : 0,
                     ActivityType = cbType.SelectedValue.ToString(),
                     Grade = cbGrade.SelectedValue.ToString(),
                     SchoolYear = cbSchoolYear.SelectedValue.ToString(),
                     Voice = voiceQA,
                     NonVoice = nonVoiceQA,
+                    CreatedBy = RuntimeInfo.UserId,
+                    CreatedDate = dtNow,
+                    LastUpdatedBy = RuntimeInfo.UserId,
+                    LastUpdatedDate = dtNow,
+                    IsPosted = isPosted,
+                    PostedDate = isPosted ? dtNow : null,
                     ReadingComprehension = new ReadingComprehension()
                     {
                         Title = txtTitle1.Texts,
@@ -337,7 +414,26 @@ namespace BARApp.Views
                     }
                 };
 
-                factory.SaveQuizlet(model);
+                if (!IsForUpdate)
+                {
+                    if (factory.SaveQuizlet(model))
+                    {
+                        MessageBox.Show("Quizlet saved successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Error saving quizlet.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (factory.UpdateQuizlet(model))
+                    {
+                        MessageBox.Show("Quizlet updated successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Error updating quizlet.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

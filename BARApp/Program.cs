@@ -1,5 +1,6 @@
 using BARApp.uc;
 using BARApp.Views;
+using BARApp.Views.Tester;
 
 namespace BARApp
 {

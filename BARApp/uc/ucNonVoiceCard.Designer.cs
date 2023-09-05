@@ -57,7 +57,6 @@
             // 
             // txtAnswer
             // 
-            txtAnswer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtAnswer.BackColor = SystemColors.Window;
             txtAnswer.BorderColor = Color.FromArgb(118, 113, 113);
             txtAnswer.BorderFocusColor = Color.FromArgb(52, 139, 95);
@@ -69,12 +68,12 @@
             txtAnswer.IsAlphaNumeric = false;
             txtAnswer.IsAlphaNumericDash = false;
             txtAnswer.Location = new Point(175, 60);
-            txtAnswer.Margin = new Padding(4, 5, 25, 5);
+            txtAnswer.Margin = new Padding(4, 5, 150, 5);
             txtAnswer.Multiline = false;
             txtAnswer.Name = "txtAnswer";
             txtAnswer.Padding = new Padding(4);
             txtAnswer.PasswordChar = false;
-            txtAnswer.Size = new Size(600, 37);
+            txtAnswer.Size = new Size(350, 37);
             txtAnswer.TabIndex = 2;
             txtAnswer.Texts = "";
             txtAnswer.UnderlinedStyle = false;
@@ -97,7 +96,7 @@
             // 
             lblItem.AutoSize = true;
             lblItem.Dock = DockStyle.Fill;
-            lblItem.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItem.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblItem.ForeColor = Color.DimGray;
             lblItem.Location = new Point(3, 0);
             lblItem.Name = "lblItem";

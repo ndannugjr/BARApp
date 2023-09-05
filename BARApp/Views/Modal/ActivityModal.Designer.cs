@@ -35,6 +35,7 @@
             pnlContent = new Panel();
             lblFormTitle = new Label();
             lblPageNo = new Label();
+            btnSubmit = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,17 +51,18 @@
             tableLayoutPanel1.Controls.Add(pnlContent, 1, 1);
             tableLayoutPanel1.Controls.Add(lblFormTitle, 1, 0);
             tableLayoutPanel1.Controls.Add(lblPageNo, 2, 4);
+            tableLayoutPanel1.Controls.Add(btnSubmit, 1, 5);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1182, 753);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.Size = new Size(1182, 782);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // btnChangeVoice
@@ -72,7 +74,7 @@
             btnChangeVoice.ForeColor = Color.DimGray;
             btnChangeVoice.Location = new Point(3, 3);
             btnChangeVoice.Name = "btnChangeVoice";
-            btnChangeVoice.Size = new Size(112, 69);
+            btnChangeVoice.Size = new Size(112, 67);
             btnChangeVoice.TabIndex = 4;
             btnChangeVoice.Text = "Change voice";
             btnChangeVoice.UseVisualStyleBackColor = false;
@@ -85,9 +87,9 @@
             btnPrev.FlatStyle = FlatStyle.Flat;
             btnPrev.Font = new Font("Comic Sans MS", 60F, FontStyle.Bold, GraphicsUnit.Point);
             btnPrev.ForeColor = Color.Teal;
-            btnPrev.Location = new Point(3, 303);
+            btnPrev.Location = new Point(3, 259);
             btnPrev.Name = "btnPrev";
-            btnPrev.Size = new Size(112, 144);
+            btnPrev.Size = new Size(112, 140);
             btnPrev.TabIndex = 0;
             btnPrev.Text = "<";
             btnPrev.UseVisualStyleBackColor = true;
@@ -100,9 +102,9 @@
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.Font = new Font("Comic Sans MS", 60F, FontStyle.Bold, GraphicsUnit.Point);
             btnNext.ForeColor = Color.Teal;
-            btnNext.Location = new Point(1066, 303);
+            btnNext.Location = new Point(1066, 259);
             btnNext.Name = "btnNext";
-            btnNext.Size = new Size(113, 144);
+            btnNext.Size = new Size(113, 140);
             btnNext.TabIndex = 1;
             btnNext.Text = ">";
             btnNext.UseVisualStyleBackColor = true;
@@ -112,12 +114,12 @@
             // 
             pnlContent.BorderStyle = BorderStyle.FixedSingle;
             pnlContent.Dock = DockStyle.Fill;
-            pnlContent.Location = new Point(118, 75);
+            pnlContent.Location = new Point(118, 73);
             pnlContent.Margin = new Padding(0, 0, 0, 20);
             pnlContent.Name = "pnlContent";
             pnlContent.Padding = new Padding(0, 10, 0, 0);
             tableLayoutPanel1.SetRowSpan(pnlContent, 4);
-            pnlContent.Size = new Size(945, 658);
+            pnlContent.Size = new Size(945, 638);
             pnlContent.TabIndex = 2;
             // 
             // lblFormTitle
@@ -130,7 +132,7 @@
             lblFormTitle.Location = new Point(118, 0);
             lblFormTitle.Margin = new Padding(0);
             lblFormTitle.Name = "lblFormTitle";
-            lblFormTitle.Size = new Size(945, 75);
+            lblFormTitle.Size = new Size(945, 73);
             lblFormTitle.TabIndex = 3;
             lblFormTitle.Text = "NON-VOICE";
             lblFormTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -140,24 +142,41 @@
             lblPageNo.AutoSize = true;
             lblPageNo.Dock = DockStyle.Fill;
             lblPageNo.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPageNo.Location = new Point(1066, 675);
+            lblPageNo.Location = new Point(1066, 585);
             lblPageNo.Name = "lblPageNo";
-            lblPageNo.Size = new Size(113, 78);
+            lblPageNo.Size = new Size(113, 146);
             lblPageNo.TabIndex = 5;
             lblPageNo.Text = "Page 1 of 3";
             lblPageNo.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.BackColor = Color.FromArgb(192, 255, 255);
+            btnSubmit.Dock = DockStyle.Right;
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSubmit.ForeColor = Color.DimGray;
+            btnSubmit.Location = new Point(810, 734);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(250, 45);
+            btnSubmit.TabIndex = 6;
+            btnSubmit.Text = "Done!";
+            btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // ActivityModal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1182, 753);
+            ClientSize = new Size(1182, 782);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ActivityModal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GOOD LUCK!";
+            WindowState = FormWindowState.Maximized;
+            FormClosing += ActivityModal_FormClosing;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -172,5 +191,6 @@
         private Label lblFormTitle;
         private Button btnChangeVoice;
         private Label lblPageNo;
+        private Button btnSubmit;
     }
 }

@@ -121,7 +121,6 @@
             // 
             // tlpActivities
             // 
-            tlpActivities.AutoScroll = true;
             tlpActivities.BackColor = Color.White;
             tlpActivities.ColumnCount = 1;
             tlpActivities.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));

@@ -31,7 +31,7 @@ namespace BARApp.uc
 
         private void txtAnswer_TextChanged(object sender, EventArgs e)
         {
-            _model.Answer = txtAnswer.Text;
+            _model.StudentAnswer = txtAnswer.Texts;
             if (txtAnswer.Texts.Trim() == string.Empty)
             {
                 lblItem.ForeColor = Color.DimGray;
@@ -40,8 +40,8 @@ namespace BARApp.uc
             }
             else
             {
-                lblItem.ForeColor = Color.White;
-                lblAnswer.ForeColor = Color.White;
+                lblItem.ForeColor = Color.Black;
+                lblAnswer.ForeColor = Color.Black;
                 tableLayoutPanel1.BackColor = Color.LightGreen;
             }
         }

@@ -108,7 +108,7 @@ namespace BARApp.Views
                 if (btn.Name == "btnDashboard")
                     DisplayForm(new Dashboard());
                 else if (btn.Name == "btnQuizlet")
-                    DisplayForm(new Quizlet());
+                    DisplayForm(new QuizDetails());
                 else if (btn.Name == "btnDBViewer")
                     DisplayForm(new DbViewer());
                 else if (btn.Name == "btnActivities")

@@ -47,13 +47,13 @@ namespace BARApp.uc
                 btnPause.Enabled = true;
                 btnStop.Enabled = true;
                 speechSynthesizerObj = new SpeechSynthesizer();
-                if(!IsMaleVoice)
-                speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Teen);
+                if (!IsMaleVoice)
+                    speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Teen);
                 else
                     speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Male, VoiceAge.Teen);
 
                 StartTextToSpeech(textList);
-             
+
             }
         }
 
@@ -62,6 +62,7 @@ namespace BARApp.uc
             isPaused = !isPaused;
             if (isPaused)
             {
+
                 btnPlay.Enabled = false;
                 btnStop.Enabled = false;
                 speechSynthesizerObj.Pause();

@@ -1,5 +1,6 @@
 ﻿using BAR.Core.Classes;
 using BAR.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,11 +59,25 @@ namespace BAR.Factory
 
         public void CreateInitialData()
         {
+            DateTime dtNow = DateTime.Now;
+            for (int i = 6; i <= 11; i++)
+            {
+                var upd = _dbContext.ActivityHeader.Where(S => S.Id == i).FirstOrDefault();
+                //upd.CreatedDate = Convert.ToDateTime("2023/07/01");
+                //upd.CreatedBy = 1;
+                //upd.LastUpdatedDate = Convert.ToDateTime("2023/08/28");
+                //upd.LastUpdatedBy = 1;
+                //upd.PostedDate = dtNow;
+                upd.IsDeleted = false;
+                _dbContext.SaveChanges();
+            }
+
             return;
-            var bc = _dbContext.ActivityHeader.Where(S => S.Id == 9).FirstOrDefault();
+
+            var bc = _dbContext.ActivityHeader.Where(S => S.Id == 10).FirstOrDefault();
             bc.IsPosted = true;
             _dbContext.SaveChanges();
-           
+            
             _dbContext = new ApplicationDbContext();
             var update =_dbContext.ActivityHeader.Where(s => s.Grade == "XII").FirstOrDefault();
             update.Grade = "I";

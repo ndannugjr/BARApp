@@ -30,7 +30,9 @@
         {
             panel1 = new Panel();
             tlpContent = new TableLayoutPanel();
+            lblContent = new Label();
             panel1.SuspendLayout();
+            tlpContent.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -45,15 +47,33 @@
             // 
             // tlpContent
             // 
+            tlpContent.AutoScroll = true;
             tlpContent.ColumnCount = 1;
             tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpContent.Controls.Add(lblContent, 0, 0);
             tlpContent.Dock = DockStyle.Fill;
             tlpContent.Location = new Point(0, 0);
             tlpContent.Name = "tlpContent";
-            tlpContent.RowCount = 1;
+            tlpContent.RowCount = 2;
+            tlpContent.RowStyles.Add(new RowStyle());
             tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
             tlpContent.Size = new Size(945, 750);
             tlpContent.TabIndex = 1;
+            // 
+            // lblContent
+            // 
+            lblContent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblContent.AutoSize = true;
+            lblContent.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContent.ForeColor = Color.DimGray;
+            lblContent.Location = new Point(3, 0);
+            lblContent.Margin = new Padding(3, 0, 3, 20);
+            lblContent.Name = "lblContent";
+            lblContent.Padding = new Padding(0, 20, 0, 0);
+            lblContent.Size = new Size(939, 104);
+            lblContent.TabIndex = 0;
+            lblContent.Text = "This is a samplte title\r\n\r\nThis is a sample content";
+            lblContent.TextAlign = ContentAlignment.TopCenter;
             // 
             // ReadingCompre
             // 
@@ -67,6 +87,8 @@
             Tag = "Reading Comprehension";
             Text = "ReadingCompre";
             panel1.ResumeLayout(false);
+            tlpContent.ResumeLayout(false);
+            tlpContent.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -74,5 +96,6 @@
 
         private Panel panel1;
         private TableLayoutPanel tlpContent;
+        private Label lblContent;
     }
 }

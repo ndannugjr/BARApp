@@ -48,7 +48,7 @@ namespace BARApp.uc
                     tableLayoutPanel1.RowStyles[i].Height = 0;
                 }
 
-                this.Size = new System.Drawing.Size(900, 100);
+                this.Size = new System.Drawing.Size(1200, 100);
             }
         }
 

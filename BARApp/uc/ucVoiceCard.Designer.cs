@@ -67,7 +67,7 @@
             // 
             lblItem.AutoSize = true;
             lblItem.Dock = DockStyle.Fill;
-            lblItem.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblItem.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblItem.ForeColor = Color.DimGray;
             lblItem.Location = new Point(3, 0);
             lblItem.Name = "lblItem";

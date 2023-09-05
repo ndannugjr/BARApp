@@ -126,3 +126,7 @@ C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAu
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.Wasapi.dll
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.WinForms.dll
 C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\bin\Debug\net6.0-windows\NAudio.WinMM.dll
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.uc.ucReadingCompreQuestionCard.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.uc.ucQuizDetails.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.Tester.Form1.resources
+C:\Users\Jiks Dannug\Documents\GitHub\BARApp\BARApp\obj\Debug\net6.0-windows\BARApp.Views.QuizDetails.resources

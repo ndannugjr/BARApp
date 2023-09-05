@@ -57,55 +57,57 @@
             // btnPause
             // 
             btnPause.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnPause.BackColor = Color.Transparent;
             btnPause.Enabled = false;
             btnPause.FlatStyle = FlatStyle.Flat;
             btnPause.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPause.ForeColor = Color.FromArgb(0, 192, 192);
+            btnPause.ForeColor = Color.DimGray;
             btnPause.Location = new Point(3, 3);
             btnPause.Name = "btnPause";
             btnPause.Size = new Size(94, 44);
             btnPause.TabIndex = 0;
             btnPause.Text = "Pause";
-            btnPause.UseVisualStyleBackColor = true;
+            btnPause.UseVisualStyleBackColor = false;
             btnPause.Click += btnPause_Click;
             // 
             // btnPlay
             // 
             btnPlay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnPlay.BackColor = Color.Transparent;
             btnPlay.FlatStyle = FlatStyle.Flat;
             btnPlay.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPlay.ForeColor = Color.FromArgb(0, 192, 192);
+            btnPlay.ForeColor = Color.DimGray;
             btnPlay.Location = new Point(103, 3);
             btnPlay.Name = "btnPlay";
             btnPlay.Size = new Size(94, 44);
             btnPlay.TabIndex = 1;
             btnPlay.Text = "Hear";
-            btnPlay.UseVisualStyleBackColor = true;
+            btnPlay.UseVisualStyleBackColor = false;
             btnPlay.Click += btnPlay_Click;
             // 
             // btnStop
             // 
             btnStop.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnStop.BackColor = Color.Transparent;
             btnStop.Enabled = false;
             btnStop.FlatStyle = FlatStyle.Flat;
             btnStop.Font = new Font("Comic Sans MS", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnStop.ForeColor = Color.FromArgb(0, 192, 192);
+            btnStop.ForeColor = Color.DimGray;
             btnStop.Location = new Point(203, 3);
             btnStop.Name = "btnStop";
             btnStop.Size = new Size(94, 44);
             btnStop.TabIndex = 3;
             btnStop.Text = "Stop";
-            btnStop.UseVisualStyleBackColor = true;
+            btnStop.UseVisualStyleBackColor = false;
             btnStop.Click += btnStop_Click;
             // 
-            // SpeechControl
+            // ucSpeechControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 50);
             Controls.Add(tableLayoutPanel3);
-            Name = "SpeechControl";
-            Text = "SpeechControl";
+            Name = "ucSpeechControl";
+            Size = new Size(300, 50);
             tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }

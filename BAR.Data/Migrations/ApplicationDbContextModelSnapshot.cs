@@ -51,6 +51,12 @@ namespace BAR.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Grade")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -60,6 +66,15 @@ namespace BAR.Data.Migrations
 
                     b.Property<bool>("IsPosted")
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("LastUpdatedBy")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("LastUpdatedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("PostedDate")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("SchoolYear")
                         .IsRequired()
@@ -124,6 +139,59 @@ namespace BAR.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ActivityVoiceNonVoiceDetails");
+                });
+
+            modelBuilder.Entity("BAR.Data.AnswerSheet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ActivityDescriptionId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ActivityHeaderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ActivityQuestionId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ActivityVoiceNonVoiceDetailId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("AnsweredDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("QuestionType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StudentAnswer")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("TeacherId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool?>("TeacherVerdict")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("TeacherVerdictDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AnswerSheet");
                 });
 
             modelBuilder.Entity("BAR.Data.MenuNavigation", b =>

@@ -19,7 +19,7 @@ namespace BARApp.Views
 
             using (var db = new ApplicationDbContext())
             {
-                dataGridView1.DataSource = db.Users.ToList();
+                dataGridView1.DataSource = db.AnswerSheet.ToList();
                 dataGridView2.DataSource = db.ActivityHeader.ToList();
                 dataGridView3.DataSource = db.ActivityDescription.ToList();
                 dataGridView4.DataSource = db.ActivityQuestions.ToList();

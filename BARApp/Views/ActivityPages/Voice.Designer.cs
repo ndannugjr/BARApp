@@ -45,6 +45,7 @@
             // 
             // tlpContent
             // 
+            tlpContent.AutoScroll = true;
             tlpContent.ColumnCount = 1;
             tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpContent.Dock = DockStyle.Fill;

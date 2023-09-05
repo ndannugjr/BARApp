@@ -2,6 +2,7 @@
 using BAR.Data;
 using BAR.Factory;
 using BARApp.uc;
+using BARApp.Views.Tester;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
